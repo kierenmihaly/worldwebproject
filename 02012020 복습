@@ -1,0 +1,57 @@
+복습하기
+
+01012020
+
+<strong> wefwe</strong> 이런건 Tag 라고함
+
+title본문의 제목 meta charset 본문이 utf-8이란 형식으로 저장되어 있다는 것을 말함
+본문은 body라는태그로 묶기로 약속
+본문을 즉 body를 설명하는 태그는 head로 묶기로함 body,head tag는 고위직 태그라고 할 수 있고
+그 고위직 태그를 html으로 묶어준다. html 위에는 어떤문서인지 말을하는 doctype html 이라고 말할 수 있다
+
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+
+02012020
+
+  <!--
+    무시하기
+
+  -->
+
+<style>
+<!--
+  a {
+    어떤 효과를 줄것이란걸 말하는 ; 선택자(selector) !, color:red;(Declaration)
+                                          (property):(Value)
+  }
+  -->
+</style>
+
+CSS-6. Figure out Property of CSS by myself
+
+ex) when you want to make big or small of font-size
+google; css font size property -(font-size:455px;)
+
+ex) when you want to make the letter would locate in the middle or center)
+google; css font center align property? - (text-align: center;)
+
+we do helped from computer or machine which is we don;t need to memorize
+all of them . we would know everything about coding as beginner programmer.
+
+
+CSS-7 Basic of CSS Selector
+
+<style>
+  saw {
+    color:gray
+  }
+</style>
+
+It doesn't work . cuz this code is all saw would be Selector on this web page.
+So you focus ' class="saw" '  not a all saw. then you put '.'in front of 'saw'
+then it will point out 'class="saw" '
+
+
+class="saw"
