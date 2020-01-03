@@ -1,0 +1,196 @@
+복습하기
+
+01012020
+
+<strong> wefwe</strong> 이런건 Tag 라고함
+
+title본문의 제목 meta charset 본문이 utf-8이란 형식으로 저장되어 있다는 것을 말함
+본문은 body라는태그로 묶기로 약속
+본문을 즉 body를 설명하는 태그는 head로 묶기로함 body,head tag는 고위직 태그라고 할 수 있고
+그 고위직 태그를 html으로 묶어준다. html 위에는 어떤문서인지 말을하는 doctype html 이라고 말할 수 있다
+
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+
+02012020
+
+  <!--
+    무시하기
+
+  -->
+
+<style>
+<!--
+  a {
+    어떤 효과를 줄것이란걸 말하는 ; 선택자(selector) !, color:red;(Declaration)
+                                          (property):(Value)
+  }
+  -->
+</style>
+
+  CSS-6. Figure out Property of CSS by myself
+
+ex) when you want to make big or small of font-size
+google; css font size property -(font-size:455px;)
+
+ex) when you want to make the letter would locate in the middle or center)
+google; css font center align property? - (text-align: center;)
+
+we do get helped from computer or machine which is we don't need to memorize
+all of them . we would know everything about coding as beginner programmer.
+
+
+  CSS-7 Basic of CSS Selector
+
+<style>
+  saw {
+    color:gray
+  }
+</style>
+
+It doesn't work . cuz this code is all saw could be Selector on this web page.
+So you would focus ' class="saw" '  not a all saw. Then you put '.'in front of 'saw'
+then it will point out 'class="saw" '
+
+
+class="saw"
+
+
+
+
+
+
+
+  <h1><strong>03012020</strong></h1>
+
+CSS-7 Basic of CSS Selector
+
+<style>
+  a {
+
+  }
+  .saw{
+
+  }
+  #active {
+
+  }
+</style>
+
+powerful selector ; id > class > tag
+
+why? id must be use once, tag selector cover with many stuff than id, class selector
+
+
+  CSS- 8 Box Model
+
+h1 tag --> block level element
+
+a tag --> inline element
+
+ --> There are some tag for block or inline element But you can also switch whatever you want
+ for example even if h1 tag is fix for block element, you can change it in inline element.
+
+caniuse.com - fuction of css html css, ex) Is it work on IE, Opera, Chrome ect...??
+
+
+  CSS - 10 Grid
+
+<style>
+  #grid{
+    border:5px solid pink;
+    display:grid;
+    grid-template-columns: 150px(*first) 1fr(*rest of them);
+  }
+
+  div{
+    border:5px solid gray;
+  }
+</style>
+
+<body>
+  <div id="grid"> *value - you can decide whatever you want)
+    <div>NAVIGATION</div>
+    <div>ARTICLE</div>
+  </div>
+</body>
+
+
+  CSS - 12 Media Query ; Responsive Web (when you make narrow of web then all the letter or
+  picture also make in proper size following pixel)
+<style>
+  div{
+    border;10px; solid green;
+    font-size:60px;
+  }
+
+  @media(min-width:800px)
+    div{
+      display:none;   *Do not show on display
+    }
+</style>
+<body>
+  <div>
+    Responsive
+  </div>
+</body>
+
+  CSS - 13 Media Query 2
+
+Customize that which pixel u would fix or let them organize ))
+
+  CSS - 14 Reuse of CSS
+
+Build style.css file, then code <link rel="stylesheet" href="style.css">
+If u build style.css = easier to edit, effective, use less traffic, fast,
+easy cashing
+
+  CSS - 15 Final
+
+The more you know selector, property, the more you create, build new stuff
+
+
+  JavaScript - WEB2
+
+being responsive with user . Js control html ,make dynamic reactivity
+
+
+
+  JS - HTML, JS
+
+When you use JS in HTML, you let HTML notify by using <script>
+
+<script>
+  document.write('hello world');
+  document.write(1+1);
+</script>
+
+  document.write = JS code
+
+
+  JS - HTML, JS (Event)
+
+<body>
+  <input type="button" value="hi" onclick="alert('hi')">
+
+  * when you click
+  * value of onclick(=property) would come out in JS code
+
+  <input type="text" onchange="alert('changed')">
+  * when contents become changed
+
+  google; js keydown event attribute(=property)
+  <input type="text" onkeydown="alert('key down!')">
+</body>
+
+onclick, onchange, onkeydown = Event
+
+
+  JS - HTML, JS (Console)
+
+Even if you don't have file, you can code instantly in Console
+
+ex) alert ('werwerwerwerwerwerwerwerwerwer'.length) - notify how many letter you wrote
+
+You can solve any issues by using existing code already;
