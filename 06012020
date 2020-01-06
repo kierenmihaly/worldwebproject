@@ -1,0 +1,443 @@
+06012020
+
+Java Basic class
+
+
+Java - eclipse
+
+ *Hello World
+public class HelloWorld {
+	public static void main(String[] args) {
+		System.out.println("hello, World!!");
+	}
+}
+
+
+
+ *Ex01.Java
+
+package day01;
+// 주석(Comment)
+// 주석이란 우리가 코드에 설명을 적는 칸으로서
+//앞에 // 를 붗여준다.
+//그러면 해당줄은 실제 컴파일 단계에서 무시된다.
+//여러줄을 주석으로 만들때에는
+// /*로 시작해서 */ 로 끝낸다.
+/*
+ * 요렇게
+ */
+
+//자바에는 2가지 종류의 자료형(DATA TYPE)이 있다.
+//기본형과 참조형이 있다
+
+//기본형은 해당 주소에 값이 저장되어 있는 형태 -> 스택
+//참조형은 해당 주소에 값이 아니라, 값들이 저장되어있는
+//주소로 갈 수 있는 주소값이 들어가있다 -> 힙
+
+//기본형에는 8가지 자료형이 있다
+//byte short int long float double char boolean
+//byte, short, int long : 정수형 데이터타입
+//8 16 32 64 bit
+//float, double : 실수형 데이터타입
+//자릿수가 적은 실수, 자릿수가 큰 실수
+//char ; 문자형 데이터타입
+//one character
+//Boolean ; true false data type
+
+public class Ex01
+
+package day01;
+// 주석(Comment)
+// 주석이란 우리가 코드에 설명을 적는 칸으로서
+//앞에 // 를 붗여준다.
+//그러면 해당줄은 실제 컴파일 단계에서 무시된다.
+//여러줄을 주석으로 만들때에는
+// /*로 시작해서 */ 로 끝낸다.
+/*
+ * 요렇게
+ */
+
+//자바에는 2가지 종류의 자료형(DATA TYPE)이 있다.
+//기본형과 참조형이 있다
+
+//기본형은 해당 주소에 값이 저장되어 있는 형태 -> 스택
+//참조형은 해당 주소에 값이 아니라, 값들이 저장되어있는
+//주소로 갈 수 있는 주소값이 들어가있다 -> 힙
+
+//기본형에는 8가지 자료형이 있다
+//byte short int long float double char boolean
+//byte, short, int long : 정수형 데이터타입
+//8 16 32 64 bit
+//float, double : 실수형 데이터타입
+//자릿수가 적은 실수, 자릿수가 큰 실수
+//char ; 문자형 데이터타입
+//one character
+//Boolean ; true false data type
+
+//변수란 해당 곤간의 값이 바뀔 수 있는 공간을 뜻 함
+//변수를 선언할 때에는 해당 공간의 종류 공간의 이름을 써주면 된다.
+//ex) int number;
+//변수는 선언과 초기화를 해줘야 한다.
+//위의 ex는 선언이고 값을 초기화 할때에는 number = 얼마; 로 해주면 된다
+//
+public class Ex01 {
+	public static void main (String[] args) {
+		int number;
+		number = 5;
+		System.out.println(number);
+		number = 10;
+		System.out.println(number);
+
+		//선언과 초기화는 한줄로도 해줄 수 있당.
+		//datatype 변수명 = 값;
+		int number2 = 20;
+		System.out.println(number2);
+
+		//자료형을 내가 원하는 자료형으로 바꿔줄 수 있다.
+		//이러한 바꿔주는것을 형변환(type casting) 이라고 한다.
+
+		//형변환에는 2가지가 있다.
+		//암시적 형변환(implicit type casting)과
+		//명시적 형변환(explicit type casting)이 있다.
+
+		//암시적 형변환은 더 작은 데이터타입의 값을 더 큰 데이터타입으로 옮길때 실행됨
+		number = 100;
+		long myLong = number; //롱이 더 큰 데이터타입이기 떄문에
+		//굳이 number를 롱으로 바꾸라고 명시해 줄 필요가 없다.
+
+		//명시적 형번환은 더 큰 데이터타입의 값을 더 작은 데이터타입으로 옮길때 실행
+		//명시적 형변환은 (바꿀 데이터타입)값 으로 해주게 된다.
+		byte myByte = (byte)number; //에러가 난다!
+		myByte = (byte)-129;
+		System.out.println(myByte);
+		//byte를 128 과 -129 등을 하며 overflow와 underflow를 직접 느껴봐랏!
+		//2시에 이름짓는 규칙을 알아보장
+		//from 2pm
+	}
+}
+
+
+
+ *ex02
+
+package day01;
+//자바의 이름규칙
+
+//1. 자바는 낙타등 표기법(camel back notation)
+//첫번째 단어는 모두다 소문자, 두번째 단어부터는 첫글자만 대문자
+//예시: number, age, firstNumber, secondNumber
+
+//2. 클래스는 대문자로 시작하는 명사이다.
+//예시: Ex, Scanner, String
+
+//3. 메소드는 소문자로 시작하는 동사
+//ex. println(print a line의 줄임말), main
+
+//4. 변수는 소문자로 시작하는 명사
+//ex. number
+
+//5. 상수는 모두다 대문자로 적어주고 단어 사이에는 '_'를 넣어준다.
+//ex. PI, UNIT_PRICE
+
+//상수란? 해당 공간의 값이 처음 초기화된 값으로만 사용 가능한 공간
+//상수는 final 이라는 단어를 붙여서 초기화 한다.
+
+//6. 자바에서 시스템적으로 사용하기 위해 미리 정해놓은 예약어 36개 쓸 수 없다.
+//예약어들은 이클립스에서 보라색으로 표시해주는 단어들을 예약어라고 한다.
+//ex. public, class, int
+
+//7.이름에 특수문자를 쓰면 안된다.
+//ex. ★mynumber
+
+//8. 한글로 이름을 지어줄 수는 있지만 절대 하지 말것;
+
+//9. 단어를 적어줄때 더이상 약어로 적지말라!
+//ex. num -> number, str - string 으로 적자!
+
+//10. 변수명에 숫자가 포함될 수는 있지만 시작할때는 숫자를 적어주면 안된다.
+//ex. number1 -> 0, 1number -> no
+
+
+
+public class Ex02 {
+	//상수를 만들어보자
+	static final int SIZE = 5;
+	public static void main(String[] args) {
+		//SIZE = 10; 이미 size에 5라는 값이 초기화 되었기 때문에
+		//10으로 변경할 수 없다.
+	}
+}
+
+
+ *ex03
+
+package day01;
+//연산자01- 산술 연산자
+//연산자란? 변수의 값을 이용하여 계산하는 특수문자들을 연산자라고 한다.
+//산술 연산자는 + - * / % 5가지가 있다.
+
+public class Ex03 {
+	public static void main(String[] args) {
+		int number1 = 10;
+		int number2 = 4;
+		System.out.println(number1 + number2);
+		System.out.println(number1 - number2);
+		System.out.println(number1 * number2);
+		System.out.println(number1 / number2);
+		System.out.println(number1 % number2);
+
+		//정수의 나눗셈 결과값을 실수로 바꿔보자
+		double number3 = number1 / number2;
+		//위의 코드는 2.0이 나온다. 왜냐! number1 / number2
+		//결과값인 정수형인 2를 double로 바꿔서 2.0이 되기 때문
+
+		//우리가 원하는대로 2.5라는 값을 계산하려면
+		//정수 / 실수 or 실수/ 정수를 실행해야 한다.
+		number3 = (double)number1 / number2;
+		System.out.println(number3);
+	}
+
+}
+
+ *ex04
+
+package day01;
+//연산자2 - 증감연산자
+//증감연산자는 변수의 현재값을 1씩 증가시키거나 감소시킨다.
+//증감연산자는 전위연산과 후위연산이 있다.
+
+//++, --
+public class ex04 {
+	public static void main(String[] args) {
+		int number = 5;
+		System.out.println(number++);
+		//++가 뒤에 붙으면 후위 연산자가 된다
+		//후위 연산자는 해당 줄에서 실행 순서가 가장 마지막이 된다.
+		//즉 System.out.println(number++)의 의미는
+		//number의 현재값을 출력하고 출력 뒤에 number의 현재값
+		//1을 증가 시킨다.
+		System.out.println(number);
+		System.out.println(++number);
+		//++가 앞에 붙으면 전위 연산자가 된다.
+		//전위 연산자는 해당 줄에서 실행 순서가 가장 먼저가 된다.
+		//System.out.println(++number)의 의미는
+		//number의 현재값을 1 증가시키고 나서
+		//number의 값을 화면에 출력을 한다.
+		System.out.println(number);
+	}
+}
+
+
+ *ex05
+
+package day01;
+//연산자3 - 비교연산자
+// >, >=, <, <=, ==, !=
+public class ex05 {
+	public static void main(String[] args) {
+		int number1 = 10;
+		int number2 = 15;
+		System.out.println(number1 > number2);
+		System.out.println(number1 >= number2);
+		System.out.println(number1 < number2);
+		System.out.println(number1 >= number2);
+		System.out.println(number1 == number2);
+		System.out.println(number1 != number2);
+
+		//하지만 비교연산자 중에서 ==과 !=은 클래스의 변수(객체)에
+		//대해서는 사용하면 정확한 값을 못 얻을수도 있다.
+
+		//String이란 문자열을 뜻한다(여러개의 문자가 모여있음)
+		String string1 = "abc";
+		String string2 = new String("abc");
+
+		System.out.println(string1);
+		System.out.println(string2);
+
+		System.out.println(string1 == string2);
+
+		//왜 두개의 똑같은 abc를 넣었는데 false가 나온걸까?
+	}
+}
+
+
+ *ex06
+
+package day01;
+//연산자4 - 논리연산자
+//&& || !
+//&& ; AND 연산자
+//||; OR 연산자(shift+＼)
+//!: 부정 연산자
+public class ex06 {
+	public static void main(String[] args ) {
+		//논리연산자는 2개의 boolean에 대해서
+		//연산을 한다
+
+		//&&; 2개다 true일떄만 true
+		//||; 2개중 하나만 ture여도 true
+		//!: true는 false로 false는 true로
+
+		boolean boolean1 = true;
+		boolean boolean2 = true;
+		System.out.println(boolean1 && boolean2);
+		System.out.println(boolean1 || boolean2);
+		boolean1 = true;
+		boolean2 = false;
+		System.out.println(boolean1 && boolean2);
+		System.out.println(boolean1 || boolean2);
+		boolean1 = false;
+		boolean2 = false;
+		System.out.println(boolean1 && boolean2);
+		System.out.println(boolean1 || boolean2);
+
+		System.out.println(!boolean1);
+	}
+}
+
+
+ *ex07
+
+package day01;
+//연산자05 - 비트연산자(요즘 안씀 근데 왜함??)
+//비트연산자는 비트(2진법 숫자)에 대한 연산을 한다
+//&, |, ^, ~, <<, >>
+
+//&; AND연산 ->두 이진법 숫자의 같은 자릿수가 1이면 1 아니면 0
+//|; OR연산 -> 두 이진법 숫자의 자릴수가 하나라도 1이면 1둘다 0
+//^; XOR -> 두 이진법 숫자의 같은 자리가 다르면 1 같으면 0
+//~; 반전연산 -> 1은 0으로 0은 1로 , 한개의 숫자에 대해서만 할 수 있다
+//<<: 왼쪽 쉬프트 연산 -> 자릿수를 오른쪽 숫자만큼 왼쪽으로 이동
+//>>: 오른쪽 시프트 연산 -> 자릿수를 오른쪽 숫자만큼 오른쪾으로 이동
+
+public class ex07 {
+	public static void main(String[] args) {
+			byte byte1 = 5; //00000101
+			byte byte2 = 6; //00000110
+
+			//&:			//00000100 -> 4
+			//|:			//00000111 -> 7
+			//^:			//00000011 -> 3
+			//~:			//11111010 -> -6
+			//-> 10000000 + 01111010
+			//-> -128 + 2 +8 +16 +32 + 64
+
+			// byte1 << 2
+			// 왼쪽 시프트 연산자의 경우에는 오른쪾에 나와있는 숫자만큼
+			//뒤에 0을 붙여주고
+			//앞의 자릿수를 잘라내서 자릴수를 맞춰준다.
+			// 00010100
+			// 20
+
+
+			System.out.println((byte)byte1 & byte2);
+			System.out.println((byte)byte1 | byte2);
+			System.out.println((byte)byte1 ^ byte2);
+			System.out.println((byte)~ byte1);
+			System.out.println((byte)byte1 << 2);
+
+			byte1 = -128;
+			//byte1 >> 2
+			//byte1 = 10000000
+			//오른쪽 시프트 연산의 경우
+			//왼쪽에 숫자를 붙여주고 오른쪾 자리를 날려준다,
+			//단 왼쪽 숫자를 붙여줄때에는 맨 왼쪽 숫자를 따라간다.
+			//10000000 ->
+			//1110000000 ->
+			//11100000
+			//-32
+
+			//byte >>> 2
+			// >>> 3개가 붙으면
+			// 자릿수를 오른쪽으로 2자리 보내고
+			// 왼쪽 빈자리를 맨 왼쪽 자리 숫자가 아니라 0으로
+			// 채운다.
+			// 10000000 ->
+			// 0010000000 ->
+			// 00100000 ->
+			// 64
+			System.out.println((byte)byte1 >> 2);
+			System.out.println((byte)(byte1 >>> 2));
+
+			//우리가 비트연산을 가장 많이 보는게 언제일까?
+			//negative이미지 positive이미지
+			//rgb값 반전영상 할때 , 하나는 x-ray처럼 나오고
+			//하나는 일반 사진 이게 가장흔한 비트연산의 쓰임의 예
+
+	}
+}
+
+
+ *ex08
+
+package day01;
+//입력
+// Java에서 입력은 Scanner 클래스 객체를 통해서 하게 된다.
+// int를 입력받을땐 객체.nextInt()
+// double 을 입력 받을땐 객체.nextDouble()
+// String을 입력받을땐 객체.nextLine()
+// Scanner는 외부 클래스이기 때문에
+// import java.util.Scanner를 패키지 다음줄에 써줘야 사용가능
+
+import java.util.Scanner;
+
+public class ex08 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("회원번호: ");
+		int userNumber = scanner.nextInt();
+		scanner.nextLine();
+		System.out.println("회원이름 : ");
+		String userName = scanner.nextLine();
+
+		System.out.println("회원비번: ");
+		String passward = scanner.nextLine();
+
+		System.out.println("번호: "+userNumber);
+		System.out.println("이름: "+userName);
+		System.out.println("비번: "+passward);
+
+		scanner.close();
+		//대표적인 버그가 스캐너버그인데 어떻게 해결 할 수 있을까?
+		//버퍼메모리에 엔터키만 넣으면 어떨까
+
+	}
+}
+
+
+ex09
+
+package day01;
+
+import java.util.Scanner;
+
+//사용자로부터
+//학생번호, 이름, 국어, 영어, 수학 점수를 입력받아서
+//출력하는 프로그램을 작성하세요
+public class ex09 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("학생번호: ");
+		int userNumber = scanner.nextInt();
+		scanner.nextLine();
+		System.out.println("이름 : ");
+		String userName = scanner.nextLine();
+
+		System.out.println("국어점수: ");
+		int korean = scanner.nextInt();
+
+		System.out.println("영어점수: ");
+		int english = scanner.nextInt();
+
+		System.out.println("수학점수: ");
+		int math = scanner.nextInt();
+
+		System.out.println("학생번호: "+userNumber);
+		System.out.println("이름: "+userName);
+		System.out.println("국어점수: "+korean);1
+		System.out.println("영어점수: "+english);
+		System.out.println("수학점수: "+math);
+
+		scanner.close();
+	}
+}
