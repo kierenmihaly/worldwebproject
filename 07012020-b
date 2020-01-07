@@ -1,0 +1,504 @@
+07012020
+
+조건문
+
+if
+switch 잘안씀 웹기준으로 http상태코드 아닌이상 잘 안씀 그럼 우리가 집중해야하는건 if문이 될것이다
+
+
+ex01
+
+package day02;
+//조건문01 - if문
+//if문은 특정 조건이 만족할 때 해당 코드 블락을 실행한다.
+//코드 블락이란 중괄호 {}사이의 모든 줄을 뜻한다.
+//if문은
+//if(조건식) {
+//	실행할 코드
+//} 요렇게 생겼따.
+public class ex01 {
+	public static void main(String[] args) {
+		int age = 25;
+		if(age < 18) {
+			//변수의 유효범위(scopㄷ, life cycle)
+			//변수는 해당 변수가 선언된 코드 블락아래에서만
+			//유효하다.
+			//만약 이 if문 안에 변수를 선언하면
+			//해당 변수는 if문 안에서만 사용 가능하다!
+			int score = 30;
+			System.out.println("미성년자입니다.");
+		}
+	}
+}
+
+
+
+
+ex02
+
+package day02;
+//조건문 02- if else 구조
+//우리가 if문의 조건을 만족하지 않을 경우에
+//실행할 코드가 있으면?
+//else를 만들어줘서
+//if문 조건을 만족하지 않는 모든 경우는 해당
+//else문의 코드 블락이 실행되게 만들어 줄 수 있습니다.
+public class ex02 {
+	public static void main(String[] args) {
+		int age = 15;
+		if(age >= 18) {
+			System.out.println("성인");
+		}else {
+			System.out.println("미성년");
+		}
+	}
+}
+
+
+
+ex03
+
+package day02;
+//조건문03 - if else if else구조
+//만약 조건을 여러 경우로 봐야한다면?
+//if - else if - else
+//가 나와서 각각의 조건을 체크해줄 수 있다.
+//물론 else if 는 여러개가 나올 수도 있다.
+
+public class ex03 {
+	public static void main(String[] args) {
+		int age = 8;
+		if(age < 8) {
+			System.out.println("Kindergathen");
+		}else if(age < 13) {
+			System.out.println("Elementary");
+		}else if(age < 17) {
+			System.out.println("Middle");
+		}else if(age < 19) {
+			System.out.println("Highschool");
+		}else {
+			System.out.println("University");
+		}
+	}
+}
+
+
+
+
+ex04
+
+package day02;
+//사용자로부터 점수를 입력을 받아서
+//a b c d e 를 출력하는 프로그램을 작성하세요
+import java.util.Scanner;
+
+public class ex04 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("점수를 입력하세요");
+		int score = scanner.nextInt();
+		//조건식 안에 AND 논리연산자를 통해서
+		//마지막 결과가 true일때만 실행이 된다.
+		// if(score <= 100 && score >= 90) 으로 해줘야함 // (100 >= scroe >= 90) 이건 안됨
+		if(score <= 100 && score >= 90) {
+			System.out.println("a");
+		}else if(score < 90 && score >= 80) {
+			System.out.println("b");
+		}else if(score < 80 && score >= 70) {
+			System.out.println("c");
+		}else if(score < 70 && score >= 60) {
+			System.out.println("d");
+		}else if(score < 60 && score >= 0) {
+			System.out.println("e");
+		}else {
+			System.out.println("오류");
+		}
+
+		scanner.close();
+
+		}
+	}
+
+
+ex 10
+
+package day02;
+//반복문 - for loop
+//반복문이란?
+//조건을 만족하는 동안 코드 블락을 반복시키는 문
+//for loop과 while loop이 있다.
+//for(int i = 시작할 숫자; 종료조건; i변화식){
+//		반복할 코드
+//}
+public class ex10 {
+	public static void main(String[] args) {
+		for(int i = 1; i < 5; i++) {
+			//i에 1이들어가고 그다음에 5보다작은지 체크  그다음에
+			//아래로 내려가서 1을 더해줌 끝나고나면 i++
+			System.out.println("i: "+i);
+		}
+	}
+}
+
+
+ex 11
+
+package day02;
+
+//사용자로부터 입력을 받아서
+//1~그숫자까지의 합을 구하는 프로그램을 작성하세요.
+import java.util.Scanner;
+
+public class ex11 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("숫자를 입력해주세요:");
+		int number = scanner.nextInt();
+		int sum = 0;
+		for (int i = 1; i <= number; i++) {
+			// sum = sum + i;
+			// 산술연산자의 경우 자기 자신의 값에 사칙연산을 하는 경우
+			// 아래의 코드처럼 줄여줄수 있다.
+			sum += i;
+
+		}
+		System.out.println(sum);
+		scanner.close();
+	}
+}
+
+
+
+
+ex12
+
+package day02;
+//사용자로부터 숫자를 입력받아서
+//팩토리얼을 구하는 프로그램을 작성하세요
+//팩토리얼이란? 1~ 해당숫자까지의 곱
+import java.util.Scanner;
+
+public class ex12 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int facto = 1;
+		System.out.println("숫자를 입력해주세요:");
+		int number = scanner.nextInt();
+
+		for (int i = 1; i <= number; i++) {
+			// sum = sum + i;
+			// 산술연산자의 경우 자기 자신의 값에 사칙연산을 하는 경우
+			// 아래의 코드처럼 줄여줄수 있다.
+			facto *= i;
+
+		}
+		System.out.println(facto);
+		scanner.close();
+	}
+
+
+
+//다음 시간 이중포문 다중포문 while문 점수를 계속 받을 수 있는 프로그램
+
+
+ex 13
+
+package day02;
+//반복문 - 다중 for loop
+//다중 for loop의 경우
+//바깥쪽 for loop이 1번 돌 동안
+//안쪽 for loop은 처음부터 끝까지 다 돈다.
+
+public class ex13 {
+	public static void main(String[] args) {
+		//char 는
+		//ascii 테이블의 코드값과 일치하는 문자를 보여준다.
+		//예를 들어 65는 'A'라는 글자가 나오게 된다.
+		for(int i = 0; i < 6; i++) {
+			char xPosition = (char)(65+i);
+			for(int j = 1; j < 6; j++) {
+				System.out.println("가로: "+xPosition + "세로: "+ j);
+			}
+		}
+		for(int i =0; i < 5; i++) {
+			for(int j = 0; j <= i; j++) {
+				System.out.print("o");
+			}
+			System.out.println();
+			//줄바꿈
+		}
+	}
+}
+
+
+ex 14
+
+package day02;
+
+//1부터 100까지의 소수를 구하는 프로그램
+//소수란? 1과 자기자신 외에는 약수가 없는 숫자
+// - > 약수의 갯수가 토탈 2개
+//약수란 해당 숫자를 나눠서 나눠떨어지는 수를 약수라고함
+//ex. 6의 약수는 1236,
+//어떤 숫자의 최대 약수는 자기 자신이다.
+// -> 47의 약수 중에서 가장 큰 약수는 47 그 자신이다.
+//이 2가지 힌트로 1~100까지의 소수를 구하는 프로그램을 만들어보자
+public class ex14 {
+	public static void main(String[] args) {
+		for (int i = 1; i <= 100; i++) {
+			// 약수의 갯수가 몇개인지 저장할 int 변수 1개를 만든다
+			int count = 0;
+			// 해당 숫자가 약수인지 아닌지 체크할 j for loop만든다
+			for (int j = 1; j <= i; j++) {
+				if (i % j == 0) {
+					count++;
+				}
+			}
+			// j for loop이 끝나면
+			// count에 토탈 약수의 갯수가 들어가게된다.
+			// 소수는 약수가 1과 자기 자신밖에 없다.
+			// 즉 약수의 토탈 갯수가 2개이다
+			if (count == 2) {
+				System.out.println(i + "는 소수");
+			}
+		}
+	}
+}
+
+ex 15
+
+package day02;
+//출력
+//자바에는 3가지 출력 method가 있다
+//print, printf, println
+//print; 괄호안의 내용을 출력하고 커서는 옮기지 않는다.
+//printf; 괄호안의 내용을 형식화해서 출력한다.
+//println; 괄호안의 내용을 출력하고 커서를 다음줄로 옮긴다.
+public class ex15 {
+	public static void main(String[] args) {
+		System.out.print("abc");
+		System.out.print("def");
+
+		System.out.println("abc");
+		System.out.println("def");
+
+		//printf는 print in format의 줄임말로써
+		//%문자를 사용해서 해당 %문자와 데이터타입이 일치하는
+		//내용을 출력한다!
+		//%문자는 단순히 어떤 데이터타입을
+		//출력할지만 정해주는 것이 아니라
+		//해당 데이터타입의 형식을 정해줄 수 있다.
+
+		//1. 10진법 숫자
+		//A) 내용을 그대로 출력해라
+		System.out.printf("1-A. %d %d %d\n", 25, 35, 45);
+
+		//B) 숫자를 자릿수를 맞춰서 출력해라
+		// -> %5d라고 입력하면 총 5칸의 공간만큼 출력한다
+		System.out.printf("1-B. %5d %5d %5d\n", 25, 35, 45);
+
+		//C) 숫자를 자릿수를 맞추고 왼쪽의 빈칸을 0으로 채워라
+		// -> %05d라고 입력하면 왼쪽에 빈 공간을 0으로 채워서 출력 해!
+		System.out.printf("1-C. %05d %05d\n", 25, 35);
+		//D) 숫자를 자릿수를 맞추고 왼쪽정렬해서 출력해라!
+		System.out.printf("1-D %-5d %-5d\n", 25, 35);
+
+		//2. 16진법 표기하기(%x)
+		//A) 16진법을 소문자로 표기해라!
+		System.out.printf("2-A. %x\n", 27);
+
+		//B) 16진법을 대문자로 표기해라
+		System.out.printf("2-B. %X\n", 27);
+		//C) 16진법을 8자리 대문자로 표기하고 왼쪽은 0으로 채워라
+		System.out.printf("2-B. %08X\n", 27);
+
+		//3. 실수(%f)
+		//A) 실수를 표기해라
+		System.out.printf("3-A. %f\n", 3.141592);
+		//B) 소숫점 3번째자리까지 표기해라
+		System.out.printf("3-B. %.3f\n", 3.141592);
+		//C) 총 8자리를 출력하고 그중 소수점 3자리까지 출력해라!
+		System.out.printf("3-C. %8.2f\n", 3.141592);
+		//D) 로그지수로 출력해라
+		System.out.printf("3-D. %8e\n", 892.0);
+
+
+		//자바에서는 ""와 ''는 다른 데이터타입
+		//''는 char(기본형 데이터타입)
+		//""는 String(참조형 데이터타입 )
+
+		//4. 문자 출력하기
+		//A) 문자 1개를 그대로 출력해라
+		System.out.printf("4-A. %c\n", 'j');
+		//B) 문자 1개를 대문자로 출력해라
+		System.out.printf("4-B. %C\n", 'j');
+
+		//5.문자열 출력하기
+		//문자열 = String
+		//A) 문자열을 그대로 출력해라
+		System.out.printf("5-A. %s\n", "AbCdEf");
+		//B)) 문자열을 대문자로 바꿔서 출력해라
+		System.out.printf("5-B. %S\n", "AbCdEf");
+
+		//printf의 %문자를 조합해서
+		//학생의 번호. 이름 나이 국영수점수 총점 평균을 출력해보자
+		//번호는 2자리 왼쪽정렬로 고정
+		//이름은 5자리 고정
+		//나이는 3자리 왼쪽정렬로 고정
+		//국어, 영어, 수학, 총점은 3자리 오른쪽 정렬하고 왼쪽 빈자리는 0으로
+		//평균은 소숫점 2자리까지
+
+		System.out.printf("%-2d번. %5s %-3d세"
+				+ "%03d점 %03d점 %03d점 %03d점 %.2f점\n ",
+				1, "김성근", 19, 80, 81, 92, (80+81+92),
+				(80+81+92) / 3.0);
+	}
+
+}
+
+
+ex 16
+
+package day02;
+//반복문 - while loop
+//while loop의 경우
+//()의 조건이 참이면 반복
+//false 면 종료 되는 형태이다.
+public class ex16 {
+	public static void main(String[] args) {
+		int number = 0;
+		while(number < 5) {
+			System.out.println(number);
+			number++;
+		}
+		//그러면 무한루프는 어떻게 만들까?
+		//무한루프란 반복문이 영원히 종료되지 않는 형태를
+		//무한루프라고 한다.
+		number = 0;
+
+		//1. 변수를 하나 만들어서 해당 변수가 뭐보다 작을동안
+		//반복을 시키고 변수는 변화가 없게 해준다.
+		//while(number < 5) {
+		//	System.out.println(number);
+		//}
+
+		//2. 항상 참이 되는 조건식을 만든다.
+		//while( 0 < 1) {
+		//	System.out.println("무한루프");
+		//}
+
+		//3. true를 넣는다.
+		//while(true) {
+		//	System.out.println("무한루프");
+		//}
+
+		//do-while vs while
+		//do-while 구조는 한번은 무조건 실행이 된다
+		number = 6;
+		do {
+			System.out.println(number);
+		}while(number < 5);
+
+		while(number < 5) {
+			System.out.println(number);
+		}
+
+	}
+}
+
+
+ex 17
+
+package day02;
+
+//무한 루프를 이용해서 메뉴를 만들어보자
+import java.util.Scanner;
+
+public class ex17 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int number = 0;
+		String name = "";
+		int age = 0;
+		int kor = 0;
+		int eng = 0;
+		int math = 0;
+
+		while (true) {
+			System.out.println("=====================");
+			System.out.printf("%-5s%8s%8s\n", "|", "비트성적프로그램", "|");
+			System.out.println("=====================");
+			System.out.println("1. 입력  2. 출력  3. 종료");
+			int choice = scanner.nextInt();
+			if (choice == 1) {
+				System.out.println("학생의 번호를 입력하세요: ");
+				number = scanner.nextInt();
+				scanner.nextLine();
+				System.out.println("학생의 이름을 입력하세요: ");
+				name = scanner.nextLine();
+				System.out.println("학생 나이: ");
+				age = scanner.nextInt();
+				System.out.println("학생의 국어점수: ");
+				kor = scanner.nextInt();
+				System.out.println("학생의 영어점수: ");
+				eng = scanner.nextInt();
+				System.out.println("학생의 수학점수: ");
+				math = scanner.nextInt();
+
+			} else if (choice == 2) {
+				if (name.contentEquals("")) {
+					System.out.println("입력된 정보가 없다.");
+				} else {
+					System.out.printf("%-2d번. %5s %-3d세" + "%03d점 %03d점 %03d점 %03d점 %.2f점\n ", number, name, age, kor,
+							eng, math, (kor + eng + math), (kor + eng + math) / 3.0);
+				}
+			} else if (choice == 3) {
+				System.out.println("사용해주셔서 감사");
+				break;
+
+			}
+		}
+		scanner.close();
+	}
+}
+
+ex18
+
+package day02;
+
+import java.util.Scanner;
+
+//학생으로부터 점수를 입력받아서
+//abcdf가 출력되는
+//무한루프 프로그램을 만드세요!
+import java.util.Scanner;
+
+public class ex18 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		while (true) {
+			System.out.println("점수입력해라(-1은 종료)");
+			int score = scanner.nextInt();
+			if (score == -1) {
+				System.out.println("사용해주셔서 감사");
+				break;
+			} else {
+				if (score <= 100 && score >= 90) {
+					System.out.println("a");
+				} else if (score < 90 && score >= 80) {
+					System.out.println("b");
+				} else if (score < 80 && score >= 70) {
+					System.out.println("c");
+				} else if (score < 70 && score >= 60) {
+					System.out.println("d");
+				} else if (score < 60 && score >= 0) {
+					System.out.println("f");
+				} else {
+					System.out.println("오류");
+				}
+			}
+		}
+
+		scanner.close();
+	}
+}
