@@ -1,0 +1,296 @@
+08012020
+
+네이버카페 남궁성 참조
+
+별찍기 연습
+
+모든 문제는 사용자가 5라고 입력하면
+아래와 같이 출력된다.
+문제 하나당 클래스 하나에 작성하면 된다.
+
+1. 		2.		3.		4.
+*		*****	      *	   *****
+**		****	            **	    ****
+***		***		  ***	     ***
+****	         **		 ****	      **
+*****	 *		*****       *
+
+5.			6.
+    *		       *********
+   ***		 *******
+  *****		   *****
+ *******	             ***
+*********	               *
+
+7.		8.		9.			10.
+*		    *	            *		       *********
+**		   **	           ***		**** ****
+***		  ***	          *****		***   ***
+****	         ****	         *******	         **     **
+*****       *****       *********	          *       *
+****	         ****	         *******	         **     **
+***		  ***	          *****		***   ***
+**		   **	           ***		**** ****
+*		    *	            *		        *********
+
+
+
+
+ex01
+
+package day030;
+
+import java.util.Scanner;
+
+public class ex01 {
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("별찍기 1번");
+		System.out.print("출력할 줄 수를 입력하세요: ");
+		int userNumber = scanner.nextInt();
+		for (int i = 1; i <= userNumber; i++) {
+			String stars = "";
+			for (int j = 1; j <= i; j++) {
+				stars += "*";
+			}
+			System.out.println(stars);
+		}
+		scanner.close();
+	}
+}
+
+
+ex02
+
+package day030;
+
+import java.util.Scanner;
+
+public class ex02 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("별찍기 2번");
+		System.out.print("출력할 줄 수를 입력하세요: ");
+		int userNumber = scanner.nextInt();
+		// 어떻게 해야 userNumber, userNumber -1, -2 ....
+		// 이 될까?
+		for (int i = 1; i <= userNumber; i++) {
+			String stars = "";
+			// 어떻게 해야 userNumber,
+			// userNumber -1, -2 ....
+			// 이 될까?
+			for (int j = i; j <= userNumber; j++) {
+				// i가 1일때는
+				// 1 2 3 4 5 5 번 반복
+				// i 가 2일때는
+				// 2 3 4 5 4 번 반복
+				// i 가 3일때는
+				// 3 4 5 3 번반복
+				// 횟수가 매번 줄어든다
+
+				stars += "*";
+			}
+			System.out.println(stars);
+		}
+		scanner.close();
+	}
+}
+
+
+ex03
+
+package day030;
+
+import java.util.Scanner;
+
+public class ex03 {
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("별찍기 3번");
+		System.out.print("출력할 줄 수를 입력하세요: ");
+		int userNumber = scanner.nextInt();
+
+		for (int i = 1; i <= userNumber; i++) {
+			String stars = "";
+			// 공백을 담당하는 j for loop 1개
+			for (int j = i; j <= userNumber - 1; j++) {
+				stars += " ";
+			}
+			// 별을 담당하는 j or loop 1개
+			for (int j = 1; j <= i; j++) {
+				stars += "*";
+			}
+			/*
+			 * for (int j = 5; j >= 0; j--) { if (i < j) { System.out.print(" "); } else {
+			 * System.out.print("*"); } }
+			 */
+			System.out.println(stars);
+		}
+		scanner.close();
+	}
+}
+
+
+ex04
+
+package day030;
+
+import java.util.Scanner;
+
+public class ex04 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("별찍기 4번");
+		System.out.print("출력할 줄 수를 입력하세요: ");
+		int userNumber = scanner.nextInt();
+		// 첫째 공백 0 ,두번째 공백 1 ,마지막에 i -1
+		for (int i = 1; i <= userNumber; i++) {
+			String stars = "";
+			for (int j = 1; j <= i - 1; j++) {
+				stars += " ";
+			}
+			for (int j = i; j <= userNumber; j++) {
+				stars += "*";
+			}
+			System.out.println(stars);
+		}
+		scanner.close();
+	}
+}
+
+
+ex05
+
+package day030;
+
+import java.util.Scanner;
+
+public class ex05 {
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("별찍기 5번");
+		System.out.print("출력할 줄 수를 입력하세요: ");
+		int userNumber = scanner.nextInt();
+//첫번쨰 공백 유저넘버 - 1, 두번째는 유저넘버 -2
+		for (int i = 1; i <= userNumber; i++) {
+			String stars = "";
+			for (int j = i; j <= userNumber - 1; j++) {
+				stars += " ";
+			}
+			for (int j = 1; j <= 2 * i - 1; j++) {
+				stars += "*";
+			}
+			System.out.println(stars);
+		}
+		scanner.close();
+	}
+}
+
+
+ex06
+
+package day030;
+
+import java.util.Scanner;
+
+public class ex06 {
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("별찍기 6번");
+		System.out.print("출력할 줄 수를 입력하세요: ");
+		int userNumber = scanner.nextInt();
+
+		for (int i = userNumber; i >= 1; i--) {
+			String stars = "";
+			for (int j = i; j <= userNumber - 1; j++) {
+				stars += " ";
+			}
+			for (int j = 1; j <= 2 * i - 1; j++) {
+				stars += "*";
+			}
+			System.out.println(stars);
+		}
+		scanner.close();
+	}
+}
+
+ex07
+
+package day030;
+
+import java.util.Scanner;
+
+public class ex07 {
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("별찍기 7번");
+		System.out.print("출력할 줄 수를 입력하세요: ");
+		int userNumber = scanner.nextInt();
+		//i for loop이 분리된 형태
+
+		for (int i = 1; i <= userNumber; i++) {
+			String stars = "";
+			for(int j = 1; j <= i; j++) {
+				stars += "*";
+			}
+			System.out.println(stars);
+		}
+		for(int i = 1; i <= userNumber; i++) {
+			String stars = "";
+			for(int j = i; j <= userNumber; j++) {
+				stars += "*";
+			}
+			System.out.println(stars);
+		}
+		scanner.close();
+	}
+}
+
+
+ex08
+
+package day030;
+
+import java.util.Scanner;
+
+public class ex08 {
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("별찍기 8번");
+		System.out.print("출력할 별 수를 입력하세요: ");
+		int userNumber = scanner.nextInt();
+
+		for (int i = 1; i <= 2 * userNumber - 1; i++) {
+			String stars = "";
+			if (i < userNumber) {
+				// i가 1~4까지 즉 윗부분
+				for (int j = 1; j <= userNumber - i; j++) {
+					stars += " ";
+				}
+				for (int j = 1; j <= i; j++) {
+					stars += "*";
+				}
+			} else {
+				// i가 5~9까지 즉 아랫부분
+				int lowerI = i - userNumber + 1;
+				for (int j = 1; j <= lowerI - 1; j++) {
+					stars += " ";
+				}
+				for (int j = lowerI; j <= userNumber; j++) {
+					stars += "*";
+				}
+			}
+			System.out.println(stars);
+		}
+		scanner.close();
+	}
+}
+
+
+ex09
