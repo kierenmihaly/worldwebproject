@@ -1,0 +1,41 @@
+반복문 - for loop
+반복문이란
+조건을 만족하는 동안 코드 블락을 반복시키는 문
+for loop과 while loop이 있다
+for(int i = 시작할 숫자; 종료조건; i변화식) {
+//반복할 코드
+//}
+
+public static void main(String[] args) {
+   Scanner scanner = new Scanner(System.in);
+  int facto = 1;
+System.out.println("숫자를 입력해주세요; );
+int number = scanner.next.Int();
+
+for (int i = 1, i <= number; i++) {
+//sum = sum + i ;
+//산술연산자의 경우 자기 자신의 값에 사칙연산을 하는 경우
+//아래의 코드처럼 줄여줄 수 있다
+facto *= i;
+}
+
+System.out.println(facto);
+scanner.close();
+
+
+
+
+반복문 - 다중 for loop
+//다중 for loop 의 경우
+바깥쪽 for loop이 1번 돌 동안
+안쪽 for loop은 처음부터 끝까지 다 돈다.
+
+public static void main(String[] args) {
+//char는
+//아스키 테이블의 코드값과 일치하는 문자를 보여준다
+//예를들ㅇ어 65는 'A' 라는 글자가 나오게 된다
+
+for(int i = 0; i < 6 ; i ++) {
+    char xPosition = (char)(65+i);
+  for(int = j =1; j < 6; j++) {
+    System.out.println("가로 : " + xPosition + "세로: " + j
