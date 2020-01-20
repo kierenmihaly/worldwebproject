@@ -1,0 +1,47 @@
+자료형 !! 2가지 (기본형, 자료형)
+
+자바에는 2가지 종류의 자료형 data type 이 있다.
+기본형과 참조형이 있따
+
+기본형은 해당 주소에 값이 저장되어 있는 형태 -> 스택 영역
+참조형은 해당주소에 값이 아니라, 값들이 저장되어 있는 주소로 갈 수 있는
+주소값이 저장되어 있따 --> 힙 영역
+
+기본형에는 8가지 자료형
+byte short int long float double char boolean
+
+byte, short, int, long - 정수형 제이터 타입
+8, 16, 32, 64비트
+float, double ; 실수형 데이터 파일
+자릿수가 적은 실수, 자릿수가 큰 실수
+char 문자형 데이터타입
+문자 1개
+boolean 참,거짓 데이터타입
+true/false
+
+변수
+
+해당 공간의 값이 바뀔 수 있는 공간을 뜻한다
+변수를 선언할 때에는 해당 공간의 종류 공간의 이름을 써주면 된다
+ex) int number;
+변수는 선언과 초기화를 해줘야한다
+위의 예는 선언이고 값을 초기화 할 때에는 numnber = 값; 으로 해주면 된다
+
+public static void main(String[] args) {
+      int number;
+      number = 5;
+      System.out.println(number);
+      number = 10;
+      System.out.println(number);
+      //선언과 초기화는 한줄로도 해줄 수 있다.
+      int number2 = 20;
+      System.out.println(number2);
+}
+
+자료형을 내가 원하는 자료형으로 바꿔 줄 수 있따 
+이러한 것을 형변환(type casting)이라고 한다
+형변환에는 2가지가 있다
+암시적 형변환과 명시적형변환
+영어로는 impicit type casting
+
+요기까지 ㅎㅎ 1주일간 날로먹고 이번주도 날로먹을듯 ㅎㅎ
