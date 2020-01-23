@@ -1,0 +1,65 @@
+230120
+
+//반복문 - for loop
+//반복문이란?
+//조건을 만족하는 동안 코드블락을 반복시키는 문
+//for loop과 while loop이 있다
+//for(int i = 시작할 숫자; 종료조건; i변화식) {
+반복할 코드
+}
+
+public class ex10 {
+        public static void main(String[] args) {
+              for(int i = 1; i < 5; i++) {
+              //i에 1이 들어가고 그 다음에 5보다 작은지 체크 그 다음에
+              //아래로 내려가서 1을 더해줌 끝나고나면  i++
+              System.out.println("i: "+i);
+              }
+        }
+}
+
+사용자로부터 입력을 받아서
+//1~그 숫자까지의 합을 구하는 프로그램을 작성하세요
+import java.util.Scanner;
+
+public static
+ void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("숫자를 입력해주세요");
+    int number = scanner.nextInt();
+    int sum = 0;
+    for (int i = 1; i <= number; i++) {
+          //sum = sum + i;
+          //산술연산자의 경우 자기 자신의 값에 사칙연산을 하는 경우
+          //아래의 코드처럼 줄여줄 수 있다 .
+          sum += i;
+
+    }
+    System.out.println(sum);
+    scanner.close();
+ }
+
+ ex12
+
+ //사용자로부터 숫자를 입력받아서
+ //팩토리얼 구하는 프로그램을 작성하세요
+ //팩토리얼이란? 1~ 해당숫자까지의 곱
+
+ import java.util.Scanner;
+
+ public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
+      int facto = 1;
+      System.out.prinln("숫자를 입력해주세요 ");
+      int number = scanner.nextInt();
+
+      for(int i = 1; i <= number; i++) {
+      //sum = sum + i ;
+      //산술연산자의 경우 자기 자신의 값에 사칙연산을 하는 경우
+      //아래의 코드처럼 줄여줄 수 있따
+      facto *= i;
+      }
+
+      System.out.println(facto);
+      scanner.close();
+ }
