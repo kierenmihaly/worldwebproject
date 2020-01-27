@@ -1,0 +1,46 @@
+27012020
+
+
+반복문 - while loop
+//while loop의 경우
+//()의 조건이 참이면 반복
+//false 면 종료 되는 형태 !!
+
+publis static void main(String[] args) {
+  int number = 0;
+  while(number < 5) {
+    System.out.println(number);
+    number++;
+  }
+  //그러면 무한루프는 어떻게 만들까?
+  //무한루프란 반복문이 영원히 종료되지 않는 형태를
+  //무한루프라고 한다
+  number = 0;
+
+  //1. 변수를 하나 만들어서 해당 변수가 뭐보다 작을동안
+  //반복을 시키고 변수는 변화가 없게 해준다 .
+  //while(number < 5) {
+  //   System.out.println(number);
+  //}
+
+  //2.항상 참이 되는 조건식을 만든다.
+  //while(0 < 1) {
+  //  System.out.println("무한루프");
+  //}
+
+  //3. true를 넣는다
+  //while(true) {
+  //  System.out.println("무한루프");
+  //}
+
+  //do-while vs while
+  //do-while 구조는 한번은 무조건 실행이 된다
+  number = 6;
+  do {
+    System.out.println(number);
+  }while(number < 5);
+
+  while(number < 5) {
+    System.out.println(number);
+  }
+}
