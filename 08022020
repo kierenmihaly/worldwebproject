@@ -1,0 +1,78 @@
+package day4;
+
+import java.util.ArrayList;
+
+//ArrayList
+//어레이 리스트란 배열을 클래스처럼 만들고
+//대신 가변적 길이를 적용시킨 방법이다
+
+public class ec04 {
+      public static void main(String[] args) {
+          //어레이 리스트는 주소값을 연결시키는 방법을 써서
+          //가변적 길이를 구현해 놓았다
+
+          //어레이 리스트는 ㅁ-ㅁ-ㅁ-ㅁ
+          //- 선은 주소값을 말한다
+          //예를들어 우리가 맨 뒤에 추가해주려 한다
+          //근데 이 친구는 맨마지막 다음 주소값이 없는데 그럼
+          //주소값을 만들어주면 된다 그래서 아래처럼 만들 수 있다
+          //ㅁ-ㅁ-ㅁ-ㅁ-ㅁ-ㅁ
+          //중간에 ㅁ을 넣어 만들 수도 있다
+          //object는 객체, 객체는 무엇인가? 클래스 변수이다
+          //참조형 변수들은 주소값을 가지고 있다
+          //주소값이 없는 친구들은 기본형 데이터타입 8개이다
+          //그럼 기본현 데이터타입은 어레이를 만들 수 없나?
+          //자바는 기본형 데이터타입 8개를 클래스처럼 만들어 놓은게 있따
+          //클래스 배열은 주소값을 가지고 있다 . 근데 많은 단점을 가지고 있다
+          //연결된 애들도 클래스 생성자를 호출해줘야 한다. 만약 클래스 생성자를
+          //호출하지 않으면 아파트 단지 농장에 소를 볼 수 있다 .
+
+          //다시 오피셜하게 말하면
+          //어레이리스트는 주소값을 쓰기 때문에
+          //객체만 받아들일 수 있다.
+          //하지만 기본형 데이터타입들은 주소값이 없기 때문에
+          //기본형 데이터타입이 아닌 포장 클래스 (wrapper class)
+          //를 사용해서 컨트롤 해야한다
+
+          student[] students = new Student[15];
+          //이5는 배열을 위한 생성자가 되버린다.
+          for(int i = 0;) i < students.length; i++ {
+                students[i] = new Student();
+
+          }
+          //students[0].setName("멍청");
+          //배열 그자체의 생성자가 된다!
+
+          //ArrayList<모아놓을 클래스> 변수명 = new ArrayList<>
+          //참고로 int의 wrapper 클래스는?
+          //Integer다
+          Integer number - new Interger(5);
+          Interger number2 = 6;
+
+          ArrayList<Interger> list = new ArrayList<>();
+
+          //리스트에 추가 될 수 있는 객체의 종류는
+          //< > 에 들어가 있는 클래스 객체만 들어갈 수 있따
+
+          //리스트에 객체를 추가할 때에는 add(객체 ) 메소드를 실행해서 추가한다 !
+          list.add(number);
+          list.add(number2);
+          list.add(5);
+
+        //  클래스 객체만 들어갈 수 있다
+        //list.add("123");
+        //위 123은 integer가 아닌 strign이니까 들어갈 수 없다
+
+        //리스트에서 값을 출력하거나 뺴올 때에는
+        //get(인덱스) 메소드를 실행한다 .
+        System.out.println(list.get(1));
+
+        //리스트 안에 몇개의 요소가 존재하는지
+        //알고 싶을 때에는 size() 메소드를 실행한다
+        System.out.println(list.size());
+        list.remove(1);
+        System.out.println(list.get(1));
+        System.out.println(list.size());
+        //배열을 처음에 설정할 때 length가 나온다 !!
+      }
+}
