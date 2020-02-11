@@ -1,0 +1,63 @@
+11022020
+
+연산자03 - 비교연산자
+
+//비교연산자 중에서 ==와 !=는 클래스의 변수(객체)로 사용하면 정확한 값을
+//못 얻을수도 있다
+
+//String이란 문자열을 뜻한다 (여러개의 문자가 모여있음)
+
+//==을 써서 객체를 비교하면 스트링 객체의 문자열 값이 아닌
+//해당 객체들의 주소값을 비교하게 된다
+
+//클래스 객체를 비교할 때에는
+//해달 클래스에 정의되어 있는 equals라는 메소드를 통해서 비교하여야 한다
+//객체의 내부의 정의되어 있는 메소드를 접근할 떄에는
+//객체 메소드 이름으로 접근을 해야한다
+
+
+논리연산자 04
+
+//&& ; and연산자
+// ||; or 연산자
+// !: ; 부정 연산자
+
+//논리 연산자는 2개의 boolean에 대해서 연산을 한다
+// && ; 2개다 true 일떄만 true
+// !!; 2개중 하나만 true여도 true
+// !; ; true 는 false로 , false 는 true로
+
+연산자05 - 비트연산자
+//비트연산자는 비트(2진법 숫자)에 대해 연산을 한다
+
+//아 비트연산자는 그냥 스킵
+
+
+/Java에서 입력은 Scanner 클래스 객체를 통해서 하게 된다.
+//int 를 입력받을 떈 객체.nextInt()
+//double을 입력받을땐 객체.nextDouble()
+//String을 입력받을 떈 객체.nextLine()
+//Scanner는 외부 클래스 이기 때문에
+//import java.util.Scanner를 패키지 다음줄에 써줘야 가능 !
+
+import java.util.Scanner;
+public class Ex08 {
+      public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.println("memberNumber");
+            int userNumber = scanner.nextInt();
+
+            System.out.println("memberName");
+            String userName = scanner.nextLine();
+
+            System.out.println("memberDigicode");
+            String digicode = scanner.nextLine();
+
+            System.out.println("number: "+userNumber );
+            System.out.println("name: "+userName);
+            System.out.println("digicode: "+ digicode);
+
+            scanner.close();
+      }
+}
