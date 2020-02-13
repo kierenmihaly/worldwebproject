@@ -1,0 +1,154 @@
+13022020
+
+
+//switch문의 break를 일부러 생략해서
+//프로그램을 작성해보자
+
+//목적 ; 사용자로부터 월을 입력받아서
+//맨 마지막 날짜가 30일인지 31일인지 28일인지 출력하는 프로그램
+
+import java.util.Scanner;
+public class ex07 {
+      public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("월을 입력해주세요");
+            int month = scanner.nextInt();
+            switch(month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                    System.out.println("30일까지 입니당");
+                    break;
+            case 2:
+                    System.out.println("28일");
+                    break;
+            default:
+                    System.out.println("오류");
+                    break;
+
+            }
+
+
+            scanner.close();
+      }
+}
+
+
+
+//http status code에 따른
+//결과값 변경해주기
+
+public class ex08 {
+        public static void main(String[] args) {
+              int statusCode = 200;
+
+              String response = "http://localhost:8080/main";
+              switch (statusCode) {
+              case 400:
+                      response =
+                      "http://localhost:8080/error/400"
+                      break;
+              case 404:
+                      response =
+                      "http://localhost:8080/error/404";
+                      break;
+              default:
+                      break;
+              }
+              System.out.println(response);
+        }
+
+
+}
+
+
+
+//삼항연산자
+//속도가 제일 빠르지만 코드를 실행하는 용도를 사용할 수 없다
+//대신 결과값을 할당하는데 사용되어 진다
+
+//삼항 연산자의 장점 빠르다 요즘은 속도차이가 얼마 안나긴 하지만
+//빨리 처리가 된다
+
+public clasee ex09 {
+        public static void main(String[] args) {
+                //삼항연산자는
+                //조건식? 참일때 값 : 거짓일때 값
+                int age = 17;
+                //age > 18? System.out.println("Adult") : System.out.println("Teen");
+                String result = age > 18? "Adult" : age > 13? "middle " : "Teen";
+                System.out.println(result);
+
+
+        }
+}
+
+
+
+반복문 = for loop
+//반복문이란?
+//조건을 만족하는 동안 코드 블락을 반복시키는 문
+//for loop 과 while loop이 있다
+//for (int i = 시작할 숫자; 종료조건; i변화식) {
+//          반복할 코드
+//}
+
+public class ex10 {
+        public static void main(String[] args) {
+                for(int i = 1; i < 5; i++) {
+                      //i에 1이 들어가고 그다음에 5보다 작은지 체크
+                      //그다음에 아래로 내려가서 1을 더해줌 끝나고나면 i++
+                      System.out.println("i: " +1);
+                }
+        }
+}
+
+
+
+//사용자로부터 입력을 받아서
+//1~그 숫자까지의 합을 구하는 프로그램을 작성하세요
+import java.util.Scanner;
+
+public class ex11
+        public static void main(String[] args) {
+              Scanner scanner = new(System.in);
+              System.out.println("숫자를 입력해라");
+              int number = scanner.nextInt();
+              int sum = 0;
+              for (int i = 1; i <= number; i++) {
+                    // sum = sum + i;
+                    // 산술연산자의 경우 자기 자신의 값에 사칙연산을 하는 경우
+                    // 아래의 코드처럼 줄여줄 수 있다
+                    sum += i;
+              }
+              System.out.println(sum);
+              scanner.close();
+        }
+
+
+//해당숫자로부터 숫자를 입력받아서
+//팩토리얼을 구하는 프로그램을 작성하세요
+//팩토리얼 이란 ? 1~ 해당숫자까지의 곱
+import java.util.Scanner;
+
+public class ex12 {
+      public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int facto = 1;
+            System.out.println("숫자를 입력해주세요");
+            int number = scanner.nextInt();
+
+            for (int i = 1; i <= number; i ++) {
+                //sum = sum + i;
+                //산술연산자의 경우 자기 자신의 값에 사칙연산을 하는 경우
+                //아래의 코드처럼 줄여줄 수 있따
+                facto *= i;
+            }
+            System.out.println(facto);
+            scanner.close();
+      }
+}
