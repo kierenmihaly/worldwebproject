@@ -1,0 +1,32 @@
+18022020
+
+
+CSS-7 Basic of CSS Selector
+
+<style>
+  a {
+
+  }
+  .saw{
+
+  }
+  #active {
+
+  }
+</style>
+
+powerful selector ; id > class > tag
+
+why? id must be use once, tag selector cover with many stuff than id, class selector
+
+
+  CSS- 8 Box Model
+
+h1 tag --> block level element
+
+a tag --> inline element
+
+ --> There are some tag for block or inline element But you can also switch whatever you want
+ for example even if h1 tag is fix for block element, you can change it in inline element.
+
+caniuse.com - fuction of css html css, ex) Is it work on IE, Opera, Chrome ect...??
