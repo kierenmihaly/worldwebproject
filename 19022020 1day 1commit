@@ -1,0 +1,44 @@
+19022020 
+
+
+
+CSS - 10 Grid - layout
+
+<style>
+  #grid{
+    border:5px solid pink;
+    display:grid;
+    grid-template-columns: 150px(*first) 1fr(*rest of them);
+  }
+
+  div{
+    border:5px solid gray;
+  }
+</style>
+
+<body>
+  <div id="grid"> *value - you can decide whatever you want)
+    <div>NAVIGATION</div>
+    <div>ARTICLE</div>
+  </div>
+</body>
+
+
+  CSS - 12 Media Query ; Responsive Web (when you make narrow of web then all the letter or
+  picture also make in proper size following pixel)
+<style>
+  div{
+    border;10px; solid green;
+    font-size:60px;
+  }
+
+  @media(min-width:800px)
+    div{
+      display:none;   *Do not show on display
+    }
+</style>
+<body>
+  <div>
+    Responsive
+  </div>
+</body>
