@@ -1,0 +1,35 @@
+21022020
+
+JavaScript - WEB2
+
+being responsice with user. js control html, make dynamic reactivity
+
+
+JS - HTML, JS
+
+when you use JS in HTML, you let HTML notify by using <script>
+
+<script>
+  document.write('hello world');
+  document.write(1+1);
+</script>
+
+  document.write = JS digicode
+
+
+  JS - HTML, JS (Event)
+
+<body>
+  <input type="button" value="hi" onclick="alert('hi')">
+
+  *when you click
+  * value of onclick(=property) would come out in JS code
+
+  <input type="text" onchange = "alert('changed')">
+  *when contents become changed
+
+  google; js keydown event attribute(=property)
+  <input type="text" onkeydown = "alert('key down!')">
+</body>
+
+onclick, onchange, onkeydown = event
