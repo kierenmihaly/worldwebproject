@@ -1,0 +1,61 @@
+26022020 1day 1commit
+
+CSS - 7.CSS 선택자의 기본
+
+선택자의 대한 중대한 토대
+
+
+24022020 1day 1commit
+
+<!doctype html>
+<html>
+<head>
+  <title>WEB - javascript</title>
+  <meta charset="utf-8">
+  <style>
+    a {
+      color:black;
+    }
+    .saw {
+      color:gray;
+    }
+    .active {
+      color:red;
+    }
+
+    #보다가까이에 있는 명령이 좀더 우선순위를 갖는다
+    #더 높은단계는 id 임
+    #즉 id선택자와 class선택자가 붙으면 id선택자가 이긴다
+    #class 선택자와 tag선택자가 붙으면 class선택자가 이긴다
+    # id > class > tag
+    # 왜 이런 우선순위 일까? id선택자의 값이 active라면 단 한번만 등장해야한다
+    # 좀더 구체적인것이 포괄적인것보다 우선순위가 높음 !
+    # 코딩할 때 id선택자로 포인트를 주는게 좋음
+  </style>
+
+
+</head>
+
+<body>
+
+
+<ol>
+  <li><a href="1.html" class="saw">html</a></li>
+  <li><a href="2.html" class="saw" id="active">css</a></li>
+  <li><a href="3.html">javascript</a></li>
+</ol>
+
+#class 탭을 두개 만들었고 saw라는 클래스 값을 가지고 있는 태그 두개를 만들었고
+#saw라는 클래스값을 가지고 있는 모든 태그에서 gray로 만들고 싶다
+#saw라고 하게되면 웹페이지의 saw 라는 모든이름 선택자를 말하는것
+#클래스값을 saw인 태그를 가르키려면 앞에 .을 붙여 .saw라고 만들어줘야함
+
+
+<h2>javasript</h2>
+<br><br>
+JavaScript is the programming language of HTML and the Web.
+
+JavaScript is easy to learn.
+
+This tutorial will teach you JavaScript from basic to advanced.
+<br>
