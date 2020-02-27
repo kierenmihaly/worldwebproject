@@ -1,0 +1,42 @@
+27022020 1day 1commit
+
+CSS - box model
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><title>
+    <style>
+    /*
+    block level element
+    */
+    h1{
+      border-width:5px;
+      border-color:red;
+      border-style: solid;
+
+      }
+      /*
+      inline element
+      */
+      a{
+      border-width:5px;
+      border-color:red;
+      border-style: solid;
+      }
+
+
+      h2{
+        border:5px solid red;
+        padding:20px;
+        margin:0;
+        width:100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS</h1> Cascading Style Sheets (<a href= >CSS</a>)is a Stylesheet
+    sheet language ---
+    <h2>HTML</h2>
+  </body>
+</html>
