@@ -1,0 +1,57 @@
+28022020 1day 1commit
+
+
+
+
+CSS - 9. box model!
+
+
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><title>
+    #페이지 > 검사 > 개발자도구
+    <style>
+      body{
+        margin:0;
+      }
+    /*
+    block level element
+    */
+    h1{
+      border-width:5px;
+      border-color:red;
+      border-style: solid;
+      margin:0;
+      padding:20px;
+    ol{
+      border-right:1px solid gray;
+      width:100px;
+      margin:0;
+      padding:20px;
+      }
+      /*
+      inline element
+      */
+      a{
+      border-width:5px;
+      border-color:red;
+      border-style: solid;
+      }
+
+
+      h2{
+        border:5px solid red;
+        padding:20px;
+        margin:0;
+        width:100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS</h1> Cascading Style Sheets (<a href= >CSS</a>)is a Stylesheet
+    sheet language ---
+    <h2>HTML</h2>
+  </body>
+</html>
