@@ -1,0 +1,44 @@
+29022020 1day 1commit
+
+
+CSS - 10 Grid
+
+레이아웃을 효율적으로 배치하는법!
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><title>
+    <style>
+      #grid{
+        border:5px solid pink;
+        display:grid;
+        grid-template-colums: 150px 1fr;
+        #1fr 은 비율이라고 생각하면 됨 !
+    }
+      div{
+        border:5px solid gray;
+      }
+  </head>
+
+
+  <body>
+    <div id="grid
+    #id값 아무거나 줘도됨
+      <div>navigation</div>
+      <div>article</div>
+    </div>
+
+#div - block level elemetn
+#span - inline element
+
+  </body>
+</html>
+
+
+
+#caniuse.com
+
+#grid가 크롬이나 익스플로러 등 어디에서 이용되어 지는지 보여줌
+예를들어 현재 웹브라우저에서 사용이 되는곳이 있고 웹페이지에서
+지원이 안되는것도 있음;
