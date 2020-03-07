@@ -1,0 +1,55 @@
+06032020
+
+WEB1 - 13 문서의 구조와 슈퍼스타들
+<!doctype html>
+<html>
+<head>
+  <title>OUIPARTTIME - html</title>
+  <meta charset="utf-8">
+</head>
+
+타이틀은 책으로 치면 책표지 같은 것
+
+웹브라우저를 열때 utf8로 열으라고 할 때
+캐릭터(문자) 셋(규칙)
+
+
+밑에 있는 코드들은 본문!
+
+위에 있는 코드들은 본문을 설명
+
+즉 타이틀이란 태그는 본문의 제목을 설명 ,
+메타케릭터 는 utf8이라고 저장되어 있다고 설명
+본문은 body태그로 묶기로 약속
+본즉 body태그를 설명하는건 head태그로 묶기로함
+그래서 body,head ``태그는 상당히 고위태그라고 할 수 있음
+최상위 태그는 html이고 관용적으로 !doctype html 이라고 써줌
+
+
+
+
+
+
+<ol>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+</ol>
+
+
+<h1>OUIGO</h1>
+
+<p style="margin-top:45px;"><strong><u>Salut</u> un site! </strong>
+</p>
+
+Comment payer moins cher son billet de train OUIGO ? <br><br>
+
+OUIGO est une offre de TGV permettant de payer son billet de train moins cher. Pour un adulte et pour un trajet, le billet de train est à partir de 10€. Et pour les enfants de moins de 12 ans accompagnés d’un adulte, le billet est à prix fixe de 5€ ou de 8€, selon les gares de départ et d’arrivée.
+<img src="ouigo.png" width="50%">
+
+##unsplash.com - free photo loyalty site
+<br><br><br>
+
+06032020
+
+WEB1 - 13 문서의 구조와 슈퍼스타들
