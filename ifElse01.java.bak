@@ -42,5 +42,4 @@ public class ifElse01
 		System.out.println("if의 조건문이 b1=true입니다.");
 	}
 	}//end of main
-
 }//end of class

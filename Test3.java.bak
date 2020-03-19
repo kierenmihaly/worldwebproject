@@ -1,0 +1,28 @@
+public class Test3
+{
+	public static void main(String[] args)
+	{
+
+		int i = Integer.parseInt(args[0]);
+if (i%2==0){	{	 //짝수일때 3의배수인지 아닌지 확인 
+	if(i%3==0) {
+		System.out.println("입력하신 1번째 인자값 "+i+"은 짝수 이며 3의 배수입니다. ");
+	}else{
+		System.out.println("입력하신 1번째 인자값 "+i+"은 짝수 이며 3의 배수가 아닙니다.");
+
+	}else{			//홀수일때 3의 배수인지 아닌지 확인 
+	if(i%3==0) {
+		System.out.println("입력하신 1번째 인자값 "+i+"은 홀수 이며 3의 배수입니다. ");
+	}else{
+		System.out.println("입력하신 1번째 인자값 "+i+"은 홀수 이며 3의 배수가 아닙니다.");
+	}
+	}
+}
+	}
+	}
+
+
+
+		//int j = Integer.parseInt(args[1]);
+
+

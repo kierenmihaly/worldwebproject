@@ -1,49 +1,49 @@
-package jb01.part06;
+//package jb01.part06;
 
 /*
 	FileName:OperatorTest.kava
 
-	1. ++, --:ì¦ê°€, ê°ì†Œì—°ì‚°ì
-	2. % : ë‚˜ë¨¸ì§€ ì—°ì‚°ì
-	3. 3í•­ ì—°ì‚°ì
+	1. ++, --:Áõ°¡, °¨¼Ò¿¬»êÀÚ
+	2. % : ³ª¸ÓÁö ¿¬»êÀÚ
+	3. 3Ç× ¿¬»êÀÚ
 */
 public class OperatorTest
 {
 	///main method
-	publid static void main(String[]args)
+	public static void main(String[]args)
 	{
 		int value=1;
 
-		//ì¦ê°ì—°ì‚°ìì˜ ì‚¬ìš©	
-		value++;		/value++ì˜ë¯¸ : ìê¸°ìì‹  1 ì¦ê°€
+		//Áõ°¨¿¬»êÀÚÀÇ »ç¿ë	
+		value++;		//value++ ÀÇ¹Ì : ÀÚ±âÀÚ½Å 1 Áõ°¡
 		System.out.println("value++: "+value);
-		++value;		/++value++ì˜ë¯¸ : ìê¸°ìì‹  1 ì¦ê°€
+		++value;		//++value++ÀÇ¹Ì : ÀÚ±âÀÚ½Å 1 Áõ°¡
 		System.out.println("++value: "+value);
 
-		value--;	//value-- ì˜ë¯¸:ìê¸°ìì‹  1ê°ì†Œ 
-		System.out.println("value--: "value);
-		--value;	//value-- ì˜ë¯¸:ìê¸°ìì‹  1ê°ì†Œ 
-		System.out.println("--value: "value);
+		value--;	//value-- ÀÇ¹Ì:ÀÚ±âÀÚ½Å 1°¨¼Ò 
+		System.out.println("value--: "+value);
+		--value;	//value-- ÀÇ¹Ì:ÀÚ±âÀÚ½Å 1°¨¼Ò 
+		System.out.println("--value: "+value);
 
-		//ì¦ê°€ê°ì†Œì—°ì‚°ì ì‚¬ìš©//==> ì£¼ì„ì„ í’€ë©´ì„œ ì¶œë ¥ê²°ê³¼ë¥¼ í™•ì¸ 
-		int temp = value++; //temp = value++ ì˜ë¯¸:value ì˜ ê°’ì„ temp ëŒ€ì… í›„ ìê¸°ìì‹  1 ì¦ê°€ 
-		//int temp = value--; //temp = value-- ì˜ë¯¸: value ì˜ ê°’ì„ temp ëŒ€ì… í›„ ìê¸°ìì‹  1 ê°ì†Œ 
-		//int temp = ++value;//temp=++value ì˜ë¯¸: value ìê¸°ìì‹ ì— 1ì¦ê°€ ê·¸ ê°’ temp ëŒ€ì… 
-		//int temp = --value; //temp = --value ì˜ë¯¸ : value ìê¸°ìì‹ ì— 1ê°ì†Œ ê·¸ ê°’ temp ëŒ€ì… 
+		//Áõ°¡°¨¼Ò¿¬»êÀÚ »ç¿ë//==> ÁÖ¼®À» Ç®¸é¼­ Ãâ·Â°á°ú¸¦ È®ÀÎ 
+		int temp = value++; //temp = value++ ÀÇ¹Ì:value ÀÇ °ªÀ» temp ´ëÀÔ ÈÄ ÀÚ±âÀÚ½Å 1 Áõ°¡ 
+		//int temp = value--; //temp = value-- ÀÇ¹Ì: value ÀÇ °ªÀ» temp ´ëÀÔ ÈÄ ÀÚ±âÀÚ½Å 1 °¨¼Ò 
+		//int temp = ++value;//temp=++value ÀÇ¹Ì: value ÀÚ±âÀÚ½Å¿¡ 1Áõ°¡ ±× °ª temp ´ëÀÔ 
+		//int temp = --value; //temp = --value ÀÇ¹Ì : value ÀÚ±âÀÚ½Å¿¡ 1°¨¼Ò ±× °ª temp ´ëÀÔ 
 		System.out.println("temp:"+temp);
 		System.out.println("value : "+value);
 
-		//ë‚˜ë¨¸ì§€ ì—°ì‚°ì ì‚¬ìš©í•˜ê¸° 
+		//³ª¸ÓÁö ¿¬»êÀÚ »ç¿ëÇÏ±â 
 		int temp01 = 5%2;
 		int temp02 = 5%3;
-		System.out.println("ë‚˜ë¨¸ì§€ ì—°ì‚°ì : 5%2 ==> " +temp01);
-		System.out.println("ë‚˜ë¨¸ì§€ ì—°ì‚°ì : 5%3 ==> "+temp02);
+		System.out.println("³ª¸ÓÁö ¿¬»êÀÚ : 5%2 ==> " +temp01);
+		System.out.println("³ª¸ÓÁö ¿¬»êÀÚ : 5%3 ==> "+temp02);
 
-		//ì‚¼í•­ì—°ì‚°ì :: (ì¡°ê±´) ? ì¡°ê±´ì´ ì°¸ì´ë©´ : ì¡°ê±´ì´ ê±°ì§“ì´ë©´;
+		//»ïÇ×¿¬»êÀÚ :: (Á¶°Ç) ? Á¶°ÇÀÌ ÂüÀÌ¸é : Á¶°ÇÀÌ °ÅÁşÀÌ¸é;
 		int temp03 = (1<=2)? 3:4;
-		System.out.println("ì‚¼í•­ì—°ì‚°ì: (1<=2)? 3:4 ==> "+temp03);
+		System.out.println("»ïÇ×¿¬»êÀÚ: (1<=2)? 3:4 ==> "+temp03);
 
-		//int temp04 = (1 =<2 ) ? 3:4; <== Compile Error í™•ì¸ 
+		//int temp04 = (1 =<2 ) ? 3:4; <== Compile Error È®ÀÎ 
 
 	}//end of main
 
