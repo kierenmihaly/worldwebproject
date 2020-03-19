@@ -1,4 +1,4 @@
-package jb01.part07;
+//package jb01.part07;
 
 /*
 	FileName : IfElse02.java

@@ -1,0 +1,13 @@
+public class ContinueTest{
+
+	public static void main(String[] args){
+
+		int inputData = integer.parselnt(args[0]);
+
+		int sum=0;
+
+		for(int i = 0;i<=
+	{
+		System.out.println("Hello World!");
+	}
+}

@@ -3,7 +3,7 @@
 /*
 	FileName : CalculationTest.java
 */
-public class CalculationTest
+public class Calculation Test
 {
 	///main method
 	public static void main(String args[])

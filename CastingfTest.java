@@ -1,4 +1,4 @@
-package jb01.part05;
+//package jb01.part05;
 
 /*
 	FileName : CastingTest.java
