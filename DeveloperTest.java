@@ -11,12 +11,12 @@ public class DeveloperTest{
 		System.out.println("=================");
 
 		developer.participateProject();
-		System.out.println("평균수입은 : "developer.avgIncome);
+		System.out.println("평균수입은 : "+developer.avgIncome);
 		System.out.println("project 참여 경력은 : "+developer.projectCareer);
 
 		System.out.println("=================");
 
 		developer.instruct();
-		System.out.println("평균수입은 : "developer.avgIncome);
+		System.out.println("평균수입은 : "+developer.avgIncome);
 	}
 }

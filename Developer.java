@@ -1,5 +1,5 @@
 public class  Developer
-
+{
 	String name = "홍길동";
 	String job = "개발자";
 	int avglncome = 100;
@@ -13,7 +13,7 @@ public class  Developer
 	}
 
 	public void instruct(){
-		System.out.println('강의를통한 수입증가");
+		System.out.println("강의를통한 수입증가");
 		avglncome++;
 	}
 

@@ -1,5 +1,5 @@
 public class  Developer
-
+{
 	String name = "홍길동";
 	String job = "개발자";
 	int avglncome = 100;
@@ -17,4 +17,4 @@ public class  Developer
 		avglncome++;
 	}
 
-}end of class
+}

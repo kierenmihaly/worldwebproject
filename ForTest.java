@@ -10,8 +10,8 @@ public class  ForTest{
 				System.out.println(j+"*"+i+"="+j*i);
 	}
 
-		for (; ; ){
-		System.out.println("여기는 반복문내부의 무한 루프");
+		for (; ; ) {
+			System.out.println("여기는 반복문내부의 무한 루프");
 		}
 	
 	}
