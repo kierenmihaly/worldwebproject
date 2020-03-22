@@ -1,21 +1,11 @@
-public class Example4 {
-	public static void main(String args[]) {
-		
-		int[][] value = new int[9][9];
-		
-		for(int i = 0; i <9; i++) {
-			value[0][i] = 1*(i+1);
-		}
-		
-		for(int j=0; j < value.length; j++) {
-			System.out.println("================");
-			
-			for(int k =0; k<value[j].length;k++) {
-				System.out.println("value["+j+"]["+k+"]="+value[j][k]);
-				
-				
-			}//inner
-		}//outer
-		
-	}//main
+public class Example4{
+    public static void main9String [] args) {
+
+        for(int = 2; i < 10; i++) {
+            for(int j =1 ; j <10; j++) {
+                System.out.println(i+"*"+j+"="+i*j);
+                System.out.println();
+            }
+        }
+    }//main
 }//class
