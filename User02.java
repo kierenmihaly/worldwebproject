@@ -21,7 +21,7 @@ public static void main(String[] args){
 		User02 user=new User02();
 		System.out.println("=============");
 
-		System.out.println("name:"+user.hetName());
+		System.out.println("name:"+user.getName());
 		System.out.println("javaLevel:"+user.getJavaLevel());
 }
 }

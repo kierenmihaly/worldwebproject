@@ -1,0 +1,7 @@
+public interface PayOut{
+	public final static String payOut="√‚±›";
+
+	public avstract void payOut(int money);
+
+
+}//class

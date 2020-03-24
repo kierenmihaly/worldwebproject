@@ -3,6 +3,7 @@ public class  Iam extends Human{
 	String job;
 
 	public Iam(){
+		
 		System.out.println("Iam class default Constructor");
 	}
 

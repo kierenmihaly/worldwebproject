@@ -57,7 +57,7 @@ public int getAvgIncome(){
 		System.out.println("이름은:" +name);
 		System.out.println("직업은:"+job);
 		System.out.println("평균수입은:"+avgIncome);
-		System.out.printIn("평균수입은:"+developer.getProjectCareer());
+		System.out.println("평균수입은:"+developer.getProjectCareer());
 
 	}//main
 
