@@ -9,7 +9,7 @@ class BusCharge{
 	public void information() {
 		System.out.println("버스요금안내");
 	}
-	public void information() {
+	public void charge() {
 		System.out.println("학생:300,일반인 :500, 어르신:공짜");
 	}
 
@@ -58,15 +58,15 @@ public class Display {
 		b1.charge();
 
 		b2.information();
-		System.out.println(b2.section);
+		System.out.print(b2.section);
 		b2.charge();
 
-		b3 information;
-		System.out.println(b3.section);
+		b3.information();
+		System.out.print(b3.section);
 		b3.charge();
 
-		//main
+	}//main
 
-	//class
+}//class
 
 

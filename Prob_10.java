@@ -9,6 +9,7 @@ public class Prob_10
 	}
 		
 		public int abs(int num1, int num2){
+
 		int temp = 0;
 
 		if(num1 > num2){

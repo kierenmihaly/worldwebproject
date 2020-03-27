@@ -58,14 +58,15 @@ public class Display {
 		b1.charge();
 
 		b2.information();
-		System.out.println(b2.section);
+		System.out.print(b2.section);
 		b2.charge();
 
-		b3 information;
-		System.out.println(b3.section);
+		b3.information();
+		System.out.print(b3.section);
 		b3.charge();
 
-		//main
-	//class
+	}//main
+
+}//class
 
 
