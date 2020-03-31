@@ -4,15 +4,15 @@ public class FileInputStreamTest{
 
 	public static void main(String[] args) {
 
-	FileInputStream fls = null;
+	FileInputStream fis = null;
 
 	int readCount=0;
 
 	try{
-		fls = new FileInputStream(args[0]);
+		fis = new FileInputStream(args[0]);
 
 		while(true){
-			int i = fls.read();
+			int i = fis.read();
 
 			if(i == -1) {
 				break;

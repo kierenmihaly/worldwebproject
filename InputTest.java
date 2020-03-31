@@ -24,9 +24,6 @@ public class InputTest{
 
 			}
 
-	}catch(IOException e){
-		e.printStackTrace();
-	}
 
 }//main
 

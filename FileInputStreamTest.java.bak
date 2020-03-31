@@ -4,12 +4,12 @@ public class FileInputStreamTest{
 
 	public static void main(String[] args) {
 
-	FileInputStream fls = null;
+	FileInputStream fis = null;
 
 	int readCount=0;
 
 	try{
-		fls = new FileInputStream(args[0]);
+		fis = new FileInputStream(args[0]);
 
 		while(true){
 			int i = fls.read();
@@ -24,10 +24,10 @@ public class FileInputStreamTest{
 			readCount++;
 		}
 
-	}catch(FileNotFOundException e){
+	}catch(FileNotFoundException e){
 		e.printStackTrace();
 	}catch(IOException e1){
-		e1.printStackTracce();
+		e1.printStackTrace();
 	}finally{
 		System.out.println("\n\n=============");
 		System.out.println("========>>read È½¼ö readCount:"+readCount);
