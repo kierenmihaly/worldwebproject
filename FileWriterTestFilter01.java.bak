@@ -9,9 +9,9 @@ public class FileWriterTestFilter01{
 			String fileName="";
 			String copyFileName="";
 
-			int readCOunt=0; 
+			int readCount=0; 
 
-			System.outprint("copy할file이름을 입력하세요:");
+			System.out.print("copy할file이름을 입력하세요:");
 			fileName = new BufferedReader(new InputStreamReader(System.in)).readLine();
 
 			br=new BufferedReader(new FileReader(fileName));
@@ -22,6 +22,7 @@ public class FileWriterTestFilter01{
 			String source = null;
 			while((source=br.readLine()) != null){
 				bw.write(source);
+				bw.newLine();
 				readCount++;
 			}
 			bw.flush();
