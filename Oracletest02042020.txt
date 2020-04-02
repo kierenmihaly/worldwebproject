@@ -1,0 +1,68 @@
+02042020_Oracle 
+
+
+
+CREATE TABLE emp_test(
+	id		NUMBER(3),
+	name		VARCHAR2(15),
+	salary		NUMBER(7,2),
+	title		VARCHAR(15)	DEFAULT		'사원',
+	in_date		DATE		DEFAULT		SYSDATE,
+	dept_name	VARCHAR(15)
+);
+
+=================================================================
+
+
+2.TaBLE생성확인 
+
+DES emp_test;
+
+DESCRIBE emp_test;
+
+SELECT*FROM emp_test;
+
+
+
+============================================================
+
+3. TEST용 TABLE만들기 
+
+==> 1개이상의 COLUMN을 갖는다 
+
+CREATE TABLE test_table(
+);
+
+========================================
+
+4.DDL :: DROP : TABLE 삭제 
+
+CREATE TABLE test_table(
+	no		NUMBER(10),
+	contents	VARCHAR2(10)
+	);
+
+	DESC test_table:
+
+	SELECT*FROM test_table;
+
+	DROP TABLE test_table;
+
+	DESC test_table;
+
+
+//==>DATA 표현형식 check
+//==>SySDATE:surrent time 을 나타내는 SQL KEYWORD
+SELECT SYSDATEFROMDUAL;
+(설정상태, YEAR/MONTH?DATE 확인)
+
+===========================
+==>DUAL : 출력을 위한가상(?)TABLE
+SELECT 9*9 FROM DUAL; 
+
+
+==============
+
+INSERT
+INTO emp_test(id, name, salary, title, in_date, dept_name)
+VALUES(1.'김사장', 100, '사장', '04-07-29', '개발부');
