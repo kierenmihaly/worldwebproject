@@ -1,0 +1,420 @@
+INSERT
+INTO emp_test(id, name, salary)
+VALUES(3,'홍길순', 10000);
+
+SELECT*FROM emp_test;
+
+================
+
+INSERT
+INTO emp_test(id, name, title)
+VALUES(4,'이순신', '장군');
+
+SELECT*FROM emp_test;
+
+=========
+INSERT
+INTO emp_test
+VALUES(2, USER, 1000, '부사장', SYSDATE, '영업부');
+
+SELECT*FROM emp_test;
+
+=========
+INSERT
+into emp_test(id, name)
+values(5,'장나라');
+
+
+=====
+INSERT
+into emp_test
+VALUES(6, '신나라', NULL, null, '','');
+
+SELECT*FROM emp_test;
+
+===
+
+delete from emp_table
+where 
+
+========
+
+UPDATE emp_test
+SET id =7
+WHERE name = 'SCOTT';
+
+
+
+=====
+UPDATE emp_test
+SET id = 7
+where name = 'SCOTT';
+
+
+=====
+
+UPDATE emp_test
+set dept_name = '관리부' 
+where dept_name = '영업부';
+
+
+=======
+
+UPDATE emp_test
+set title = '사장', salary =2000, dept_name = '영업팀'
+where name = '홍길순' ; 
+
+=========
+
+월급 1500 이상인 직원 대기발령 
+
+UPDATE emp_test
+set dept_name = '대기발령'
+where salary >= 1500 ; 
+
+==============
+
+UPDATE emp_test
+set title = '평사우너';
+
+===
+update emp_test
+set salary = salary + 500;
+
+
+===
+
+
+update emp_test
+set dept_name = '대기발령'
+where dept_name is null;
+
+
+====
+
+delete emp_test
+where title = '장군';
+//from 이빠져도 delete 가능 
+
+---===
+delete emp_test
+where id >=5 AND id <=6;
+SELECT*FROM emp_test;
+
+
+==
+
+
+delete emp_test
+where id = 2 and id = 3;
+
+==
+
+delete emp_test; // 다지워 지는거 
+
+
+===
+select
+id, name, salary, salary*12 
+
+from emp_test;
+
+
+===
+
+select
+name as 이름, salary as 월급, salary*12 as 연봉 
+
+from emp_test;
+
+//as 이름넣어줌 
+===
+select
+name 이름, salary 월급, salary*12 "연봉(성과급 제외)"
+from emp_test;
+
+//
+==
+
+
+select
+name, nvl(salary, 0)
+from emp_test;
+
+==
+
+select
+name, nvl(salary, '무급')
+from emp_test;
+
+//에러이유 넘버가 들어와야하는데 한글이들어옴 
+
+==
+
+select
+name, nvl2(salary, salary*12, 0), nvl(salary*12, 0) 
+from emp_test;
+
+=====
+select
+name, nvl2(title, title,'<직급없음>'), nvl(title, '<직급없음>'),
+nvl2(title, '직급없음', '<직급없음>')
+from emp_test;
+
+====
+
+select
+name, decode (title,
+		null, '<직급없음>', 	/* if(tite = null)<직급없음>	*/
+		'직급있음')	/* else		아니면 직급있음 */
+from emp_test;
+
+==
+
+select 
+name, decode ( title,
+		null,	'<직급없음>'	/* if(title = null) 	<직급없음>	*/
+		'사장',	'회사의아버지',	/* else if(title = '사장')	회사의 아버지 */
+		'부사장',	'회사의어머니',	/* else if(title = '사장')	회사의 어머니 */
+		'직급있음'), title 		/* else		아니면 직급있음 */
+from emp_test;
+
+
+
+==
+
+select
+name||title
+from emp_test;
+
+==
+
+select
+name||" "||title
+from emp_test;
+
+==
+
+
+select
+name 이름, salary*12 연봉 
+from emp_test
+order by salary*12 asc;
+
+select 
+name 이름, salary*12 연봉
+from emp_test
+order by salary*12 desc;
+
+select 
+name 이름, salary*12 연봉
+from emp_test
+order by salary*12;
+
+==
+select 
+name 이름, salary*12 연봉 
+from emp_test
+order by salary*12 asc nulls first;		내림찻군
+
+select 
+name 이름, salary*12 연봉
+from emp_test
+order by salary*12 desc nulls last;		//오름차순
+
+==
+select
+name 이름, salary*12 연봉 
+from emp_test
+order by salary*12;
+
+select
+name 이름, salary*12 연봉 
+from emp_test
+order by salary;
+
+select
+name 이름, salary*12 연봉 
+from emp_test
+order by 연봉;
+
+select
+name 이름, salary*12 연봉 
+from emp_test
+order by 2;
+
+==
+
+select
+name 이름, salary*12 연봉, dept_name 부서
+from emp_test
+order by dept_name;
+
+
+select
+name 이름, salary*12 연봉 
+from emp_test
+order by dept_name;
+
+==
+
+select
+name 이름, salary*12 연봉, dept_name 부서
+from emp_test
+order by salary;
+
+select
+name 이름, salary*12 연봉, dept_name 부서
+from emp_test
+order by salary, 부서;
+
+select
+name 이름, salary*12 연봉, dept_name 부서
+from emp_test
+order by 부서, salary;
+
+====
+
+
+select
+name 이름, salary 월급, in_date 입사일
+from emp_test
+where name >= '이순신666'
+order by name;
+
+
+=====
+
+select 
+name 이름, salary 월급, in_date 입사일 
+from emp_test
+where in_date > '2004-01-01' or salary >=5000;
+
+
+
+select 
+name 이름, salary 월급, dept_name 부서,  in_date 입사일 
+from emp_test
+where in_date > '2004-01-01' and salary >= 5000 or dept_name='관리부';
+
+==
+
+select 
+name 이름, salary 월급, in_date 입사일 
+from emp_test
+where salary not between 1000 and 2500 
+order by salary;
+
+
+select 
+name 이름, salary 월급, in_date 입사일 
+from emp_test
+where salary between 1000 and 2500 
+order by salary;
+
+select name from emp_test order by name;
+
+name 이름, salary 월급, dept_name 부서, in_date 입사일 
+from emp_test
+where name between '한국990' and '김유신222';
+
+==
+
+select 
+name 이름, dept_name 부서 
+from emp_test
+where dept_name in('관리부', '영업부')
+order by dept_name; 
+
+==
+
+select 
+name 이름, dept_name 부서 
+from emp_test
+where name like '김%';
+
+
+select 
+name 이름, dept_name 부서 
+from emp_test
+where name like '김_';
+
+select 
+name 이름, dept_name 부서 
+from emp_test
+where name like '김__';
+
+select 
+name 이름, dept_name 부서 
+from emp_test
+where name like '_김_';
+
+==
+insert into emp_test(name,title)values('박_%','특수%');
+insert into emp_test(name, tile)values('김_%','특수%');
+select*from emp_test;
+
+commit;
+
+==
+
+select
+*
+from emp_test
+where name like '__%';
+
+select
+*
+from emp_test
+where name like '_\_\%' escape'\';
+
+select
+*
+from emp_test
+where name like '_?_?%' escape '?';
+
+==
+
+select
+name 이름, in_date 입사일
+from emp_test
+where in_date like '%01';
+
+select
+name 이름, in_date 입사일
+from emp_test
+where in_date like '%04';
+
+select
+name 이름, in_date 입사일
+from emp_test
+where in_date like '%0%';
+
+
+=====
+
+
+select
+name 이름, salary 월급 
+from emp_test
+where salary > all(2500,5000); 
+
+select
+name 이름, salary 월급 
+from emp_test
+where salary > any(2500,5000); 
+
+select
+name 이름, salary 월급 
+from emp_test
+where salary  not in(3333,4444); 
+
+select
+name 이름, salary 월급 
+from emp_test
+where salary <> all(3333,4444); 
+
+select
+name 이름, salary 월급 
+from emp_test
+where salary != all(3333,4444); 
