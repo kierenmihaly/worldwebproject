@@ -1,0 +1,33 @@
+//==============================================//
+//==================== 실   습  ====================//
+//==============================================//
+
+1. 직책 종류 조회
+
+select title 
+from emp_test
+
+
+
+2. 2001년 입사자 이름, 직책, 입사일 조회
+    (   1번째 QUERY는 LIKE사용
+
+select 
+name 이름, title 직책, in_date 입사일 
+from emp_test
+where in_date like '%in_date';
+
+	2번째 QUERY는 BETWEEN사용   )
+
+select 이름,title 직책, in_date 입사일 
+from emp_test
+where in_date not between 2000 and 2002 
+
+
+3. 임금이 NULL인 사원의 모든 정보 입사일 오름차순 조회
+select 
+
+
+
+4. 관리부에서 급여가 6000이상 인 사람 이름/급여/부서 조회
+
