@@ -1,10 +1,3 @@
-//package jb01.part08;
-
-/*
-	FileName:SwitchTest.java
-	1. 분기문 : switch 연습 
-*/
-
 public class SwitchTest
 {
 	///main method
@@ -32,13 +25,17 @@ public class SwitchTest
 				break;
 			case 5: 
 				System.out.println("입력하신 값은 5 입니다.");
-				break;
+				//break;
 			default : 
 				System.out.println("case 문을 다통과(동일상수가 없을 경우");
 				System.out.println("default가 수행됨 ...입력하신 수는 "+inputData+"입니다.");
 				break;
+
+
 			}//end of switch
+
 		}//end of main
+
 	}//end of class 
 
 /*

@@ -1,6 +1,7 @@
 //package jb02.part02;
 public class  ForTest{
 	
+	//main method 
 	public static void main(String[] args) {
 	
 
