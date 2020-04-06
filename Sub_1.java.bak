@@ -1,0 +1,21 @@
+class super
+{
+
+	public int I = 0;
+	public Super(int i){
+		O = 1;
+	}
+
+}//class
+
+public class Sub_1 extends Super{
+	public Sub(String text){
+		I =2;
+
+}
+
+	public static void main(String args[]){
+		Sub sub = new Sub("Hello");
+		System.out.println(sub.i);
+	}
+}//class
