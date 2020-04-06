@@ -1,0 +1,11 @@
+¹®Á¦ 1 
+select 
+e.employee_id ¾ÆÀÌµğ, e.department_id ºÎ¼­¾ÆÀÌµğ, e.salary ¿¬ºÀ, vt.avg Æò±Õ¿¬ºÀ 
+from employees e, ( select
+                   departement_id, round(avg(salary),0) avg
+                   from employees
+                   group by departement_id) vt
+where e.departement_id = vt.departement_id
+      and e.salary > vt.avg
+order by vt.avg desc;
+
