@@ -1,0 +1,8 @@
+
+
+¹®Á¦ 1
+
+select
+e.last_name, e.salary
+from employees e, employees m
+where e.manager_id = m.employee_id and e.salary > m.salary;

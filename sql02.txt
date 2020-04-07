@@ -1,0 +1,20 @@
+문제 1
+
+select
+employee_id 사번,
+first_name 이름,
+last_name 성,
+nvl(department_name,'<NOT ASSIGNED>') 부서명
+from employees e, departments d
+where e.department_id = d.department_id(+)
+	and hire_date between '1999-01-01' and '1999-12-31';
+
+
+문제 2
+
+
+SELECT * from employees
+where department_id = 20;
+
+
+
