@@ -1,0 +1,182 @@
+문제1
+
+select
+to_char(fire_date,'MM')||'월' 월,
+count(*) 인원수
+from employees 
+group by to_char(ire_date,'MM')
+order by 월;
+
+
+문제 2
+select
+d.department_name 부서명,
+e.first_name 이름
+e.salary 급여
+from employees e, departments d
+where e.department_id=d.department_id
+	and(e.salary, d.department_name) in (select
+	max(e1.salary), d1.department_name
+	from employees e1, departments d1
+	where e1.department_id=d1.department_id
+
+	group by d1.department_name);
+
+
+문제3
+
+select
+d.department_name,
+max(e.salary),
+min(e.salary),
+avg(e.salary)
+from employees e,departments d
+where e.department_id = d.department_id
+group by d.department_name
+having avg(e.salary) > (select
+	avg(e1.salary)
+	from employees e1, departments d1
+	where e1.department_id = d1.department_id
+	and d1.department_name='IT')
+		and avg(e.salary)<(select
+	avg(e2.salary)
+	from employees e1, departments d2
+	where e1.department_id=d2.department_id
+		and d2.department_name='Sales');
+
+
+문제 4
+
+select
+nvl(d.department_name,'<신생부서>') 부서명,
+count(*) 직원수
+from employees e, departments d
+where e.department_id = d.department_id(+)
+group by d.department_name
+having count(*)=1
+order by d.department_name desc nulls last;
+
+
+
+문제 2-1
+
+select
+d.department_name 부서명,
+to_char(hire_date,'MM') 입사월,
+count(*) 직원수 
+from employees e,departments d
+where e.department_id=d.department_id
+group by d.department_name, to_char(hire_date,'MM')
+having count(*)>=5
+order by d.department_name;
+
+
+문제 2-2
+
+select
+nvl(c.country_name,'<부서없음>') 국가명,
+nvl(l.city,'<부서없음>') 도시명,
+count(*) 직원수 
+from countries c, locations l, departments d, employees e
+where c.country_id(+)=l.country_id
+	and d.location_id=l.location_id(+)
+	and d.department_id(+)=e.department_id
+	group by c.country_name, l.city
+	order by c.country_name;
+
+
+문제 2-3
+
+select
+e.employee_id,
+e.first_name,
+vt.maxsalary,
+vt.avgsalary
+from employees e,(select
+	round(max(e1.salary),0) maxsalary,
+	round(avg(e1.salary), 0) avgsalary,
+	e1.department_id di
+	from employees e1
+group by e1.department_id) vt
+where e.salary = vt.maxsalary
+	and e.department_id=vt.di;
+
+
+문제 2-4-1
+
+create table salgarde(
+grade number(2) primary key,
+losal number(5) not null;
+hisal number(5) not null);
+
+insert into (salgrade,losal,hisal)
+values(1,1000,5000);
+
+insert into salgrade(grade,losal,hisal)
+values(2,5001,10000);
+
+insert into salgrade(grade,losal,hisal)
+values(3,10001,20000);
+
+insert into salgrade(grade,losal,hisal)
+values(4,20001,30000);
+
+문제 2-4-2
+
+select
+concat(s.grade,'등급') 급여등급,
+count(*) 직원수
+from employees e,salgrade s
+where e.salary between losal and hisal 
+group by s.grade
+order by count(*) desc;
+
+
+
+
+
+
+
+문제 3-1
+
+select
+nvl(to_char(trunc(e.commission_pct,1)),'<커미션없음>') 커미션,
+count(*) 직원수 
+from employees e
+group by trunc(e.commision_pct,1);
+
+
+
+문제 3-2
+
+select
+d.department_name 부서명
+e.first_name 직원명,
+e.salary 급여 
+e.commision_pct 커미션
+from employees e, departments d
+where e.department_id = d.department_id
+	and(e.commission_pct=4 or e.commission_pct=35);
+
+
+문제 3-3
+
+select
+l.city,
+d.department_name,
+s.first_name,
+e.salary
+from employees e,departments d, locations l
+where e.department_id=d.department_id
+	and d.location_id=l.location_id
+	and l.city like '?'
+	and d.department_name like '?'; 
+
+
+select
+l.city, d.department_name, e.last_name, e.salary
+from employees e, departments d, locations l
+where e.department_id = d.department_id and d.location_id = l.location_id 
+	and city like ('%south%') 
+	and upper(d.department_name) = 'it';
+
