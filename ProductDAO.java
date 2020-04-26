@@ -36,19 +36,17 @@ public class ProductDAO {
 
 		Connection con = DBUtil.getConnection();
 
-		String sql = "select * from PRODUCT where PROD_NO=? or PROD_NAME=? or PRICE=?";
+		String sql = "select * from PRODUCT where PROD_NO=?";
 		
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setInt(1, prodNo);
-		//stmt.setString(2, prodName);
-		//stmt.setInt(3, price);
 
 		ResultSet rs = stmt.executeQuery();
 
 		ProductVO productVO = null;
 		while (rs.next()) {
 			productVO = new ProductVO();
-			productVO.setProdNo(rs.getInt("PRODUCT_NO"));
+			productVO.setProdNo(rs.getInt("PROD_NO"));
 			productVO.setProdName(rs.getString("PROD_NAME"));
 			productVO.setProdDetail(rs.getString("PROD_DETAIL"));
 			productVO.setManuDate(rs.getString("MANUFACTURE_DAY"));
@@ -76,7 +74,7 @@ public class ProductDAO {
 						+ "'";
 			} else if (searchVO.getSearchCondition().equals("2")) {
 				sql += " where PRICE='" + searchVO.getSearchKeyword()
-				+ "'";
+						+ "'";
 			}
 		}
 		sql += " order by PROD_NO";
@@ -104,11 +102,11 @@ public class ProductDAO {
 				ProductVO vo = new ProductVO();
 				vo.setProdNo(rs.getInt("PROD_NO"));
 				vo.setProdName(rs.getString("PROD_NAME"));
-				//vo.setProdDetail(rs.getString("PROD_DETAIL"));
+				vo.setProdDetail(rs.getString("PROD_DETAIL"));
 				vo.setManuDate(rs.getString("MANUFACTURE_DAY"));
 				vo.setPrice(rs.getInt("PRICE"));
-				//vo.setFileName(rs.getString("IMAGE_FILE"));
-				//vo.setRegDate(rs.getString("REG_DATE");
+				vo.setFileName(rs.getString("IMAGE_FILE"));
+				vo.setRegDate(rs.getDate("REG_DATE"));
 
 				list.add(vo);
 				if (!rs.next())
@@ -126,5 +124,19 @@ public class ProductDAO {
 	
 	public void updateProduct(ProductVO productVO) throws Exception{
 		
+		Connection con = DBUtil.getConnection();
+
+		String sql = "update PRODUCT set PROD_NAME=?,PROD_DETAIL=?,MANUFACTURE_DAY=?,PRICE=?,IMAGE_FILE=? where PROD_NO=?";
+		
+		PreparedStatement stmt = con.prepareStatement(sql);
+		stmt.setString(1, productVO.getProdName());
+		stmt.setString(2, productVO.getProdDetail());
+		stmt.setString(3, productVO.getManuDate());
+		stmt.setInt(4, productVO.getPrice());
+		stmt.setString(5, productVO.getFileName());
+		stmt.setInt(6, productVO.getProdNo());
+		stmt.executeUpdate();
+		
+		con.close();
 	}
 }
