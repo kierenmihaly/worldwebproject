@@ -61,7 +61,7 @@ public class ProductDAO {
 	}
 	
 	public HashMap<String, Object> getProductList(SearchVO searchVO) throws Exception{
-
+		System.out.println("--------------getProductList-----------");
 		Connection con = DBUtil.getConnection();
 		
 		String sql = "select * from PRODUCT ";
@@ -87,7 +87,7 @@ public class ProductDAO {
 
 		rs.last();
 		int total = rs.getRow();
-		System.out.println("로우의 수:" + total);
+		System.out.println(" ο      :" + total);
 
 		HashMap<String,Object> map = new HashMap<String,Object>();
 		map.put("count", new Integer(total));
@@ -113,6 +113,7 @@ public class ProductDAO {
 					break;
 			}
 		}
+		System.out.println("DAO list======> " + list);
 		System.out.println("list.size() : "+ list.size());
 		map.put("list", list);
 		System.out.println("map().size() : "+ map.size());
@@ -140,3 +141,4 @@ public class ProductDAO {
 		con.close();
 	}
 }
+
