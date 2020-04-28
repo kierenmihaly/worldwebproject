@@ -11,7 +11,6 @@ import com.model2.mvc.service.product.vo.ProductVO;
 
 public class AddProductAction extends Action {
 
-	@Override
 	public String execute(	HttpServletRequest request,
 												HttpServletResponse response) throws Exception {
 		ProductVO productVO=new ProductVO();
@@ -29,6 +28,9 @@ public class AddProductAction extends Action {
 		ProductService service=new ProductServiceImpl();
 		service.addProduct(productVO);
 		
-		return "redirect:/product/addProductView.jsp";
+		request.setAttribute("productVO", productVO);
+		
+		return "forward:/product/addProduct.jsp";
 	}
 }
+
