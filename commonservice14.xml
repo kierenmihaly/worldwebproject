@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+	xmlns:context="http://www.springframework.org/schema/context"
+
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"	
+	xsi:schemaLocation=
+		"http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd">
+		
+		
+		
+		<bean id="propertyConfigurer"
+				class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+			<property name="location" value="classpath:config/jdbc.properties"/>
+		</bean>
+		
+		<bean id="dataSource"
+			class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"  value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username"  value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="initialSize"  value="${jdbc.initialSize}"/>
+        <property name="maxActive" value="${jdbc.maxActive}"/>
+			
+		</bean>
+		
+		<bean id="sqlSessionFactoryBean"
+				class="org.mybatis.spring.SqlSessionFactoryBean">
+			<property name="dataSource" ref="dataSource"/>
+			<property name="configLocation" value="classpath:sql/mybatis-config13.xml"/>
+		</bean>
+		
+		<bean	id="sqlSessionTemplate"		class="org.mybatis.spring.SqlSessionTemplate">
+			<constructor-arg ref="sqlSessionFactoryBean"/>
+		</bean>
+		
+	<!-- 	1.@Autowired 사용시,아래의bean 객체 등록 필요 
+		<bean class=org.springframework.beans.factory.annotation
+					AutowiredAnnotationBeanPostProcessor/>
+		2.@Resource 사용시 아래의 bean 객체 등록 필요 
+		<bean class=org.springframework.beans.factory.annotation
+					CommonAnnotationBeanPostProcessor/>
+		3.@Component 사용시::아래의 등록필요 
+		<context:component-scan base-package="~~~"/>
+		
+		3번의 <context:component-scan base-package="~~~"/> 등록시
+		1,2번의 자동 등록으로 1,2설정 불필요(xml namespace 등록필요)
+		
+		4.J2EE 1.6등록된 @inject 사용
+		5.@component를 layer 별로 세분화한 
+		@service, @Controller, @Repository 사용 -->
+		
+		<context:component-scan base-package="mybatis.service.user.impl"/>
+		
+		<!-- <bean id="userDaoImpl14" class="mybatis.service.user.impl.UserDaoImpl14">
+			<property name = "sqlSession" ref="sqlSessionTemplate"/>
+		</bean> -->
+		
+		
+		
+    </beans>
