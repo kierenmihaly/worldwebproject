@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="EUC-KR">
+	
+	<!-- CDN(Content Delivery Network) 호스트 사용 -->
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<!-- <script type="text/javascript" src="/Ajax/10common/ajaxUtil02.js"></script>  -->
+	<script type="text/javascript">
+	 
+	 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		[[아래의 각각의 html 비교]]
+		■ 04postjQuery-orderClient.html
+			==>  javascript + jQuery + ajax +Data(String) 사용
+		■ 05postjQueryJSON-orderClient.html 
+			==> javascript + jQuery + ajax +JSON 사용
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+		
+		//server로 Post 방식 request
+		function getCustomerInfo01(){
+			
+			$.ajax(
+				{
+					url:"postJSON-orderServer.jsp",
+					method: "POST" , 
+					data : {
+								name : $("#name").val(),
+								phone : $("#phone").val()
+							} ,
+				dataType : "text" ,
+				success : function(serverData, status) {
+					
+				alert(status);
+				alert("Server에서 받은 내용 : \n"+serverData);
+				
+				var JSONData = $.parseJSON(serverData);
+				
+				alert("JSONData :\n"+JSONData);
+				
+				var displayValue = "이름:"+JSONData.name+"\n"
+									+"전화:"+JSONData.phone+"\n"
+									+"주소:"+JSONData.address;
+				$("#address").val(displayValue);
+			}
+		}
+	);
+		
+	}  
+			
+			
+		//server post way
+		function getCustomerInfo02(){
+			
+			$.ajax(
+				{
+					url:"postJSON-orderServer.jsp",
+					method: "POST" , 
+					data : {
+								name : $("#name").val(),
+								phone : $("#phone").val()
+						} ,
+					dataType : "json" ,
+					success : function(JSONData, status) {
+						
+					alert(status);
+					alert("JSONData: \n"+JSONData);					
+					
+					
+					var displayValue = "이름:"+JSONData.name+"\n"
+										+"전화:"+JSONData.phone+"\n"
+										+"주소:"+JSONData.address;
+					$("#address").val(displayValue);
+					}
+				}
+			);
+			

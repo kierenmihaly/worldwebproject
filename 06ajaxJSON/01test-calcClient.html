@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="EUC-KR">
+	
+	<script type="text/javascript">
+	
+		//request 변수 선언
+	 	var request = null;
+		
+		//XMLHttpRequest객체 생성하는 function
+		//==> XMLHttpRequest는 표준이 아니지만 대부분의 browser에서 지원
+		//==> CROSS BROWER==> NG
+		//==> XMLHttpRequest는 인스턴스 생성은 browser 마다 조금씩 다르다..
+	 	function createRequest(){
+			try{
+ 				//==> IE이외의 browser는 아래의 방식
+				request = new XMLHttpRequest();
+ 				//Debug...
+				alert ("XMLHttpRequest() 로 request instancet생성완료");
+			}catch(trymicrosoft){
+	 			try{
+	 				//==>IE :  ActiveX component 이용
+	 				request = new ActiveXObject("Msxml2.XMLHTTP");
+	 				//Debug...
+					alert ("ActiveXObject(Msxml2.XMLHTTP) 로 request instancet생성완료");
+	 			}catch(othermicrosoft){
+	 				try{
+	 					//==>Microsoft.XMLHTTP를 마지막으로 사용하는 이유 :  Msxml2.XMLHTTP가 신버전임.
+	 					request =new ActiveXObject("Microsoft.XMLHTTP");
+	 					//Debug...
+						alert ("new ActiveXObject(Microsoft.XMLHTTP) 로 request instancet생성완료");
+	 				}catch(failed){
+	 					request = null;
+	 				}
+	 			}
+			}
+			
+	 		if( request == null ){
+	 			alert ("request객체 생성시 error 발생함.");
+	 		}
+	 	}
+	 	
+		
+	 	//server로  request+data 전송 fuction
+	 	function getSold(){
+	 		
+	 		//XMLHttpRequest객체 생성 function 호출
+	 		createRequest();
+	 		
+	 		//접속 URL선언 
+	 		var url = "calcServerAjax.jsp"
+	 		
+			//==>#################################################<==//
+	 		//연결초기화 : open( Method , URL , 비동기유무 )
+	 		//request.open("GET",url,true);
+	 		
+	 		request.open("GET",url,false);
+	 		//==>#################################################<==//
+	
+	 		
+	 		//send() 호출전 아래의 속성을 지정 : CallBackFunction 지정
+	 		request.onreadystatechange = updatePage;
+	
+			//==> 아래 4개의 console 확인 
+			//==> onreadystatchange 는 4EA의 ready상태를 갖는다.
+			//==> 1 : 요청이 초기화된 상태 (open()호출 send() 미호출)
+			//==> 2 : server에 요청이 시작된 상태 (send()호출 server에 data 미도착)
+			//==> 3:  server에서 요청 처리가 종료된 상태 (server의 요청처리 거의 종료, data일부 client에 도착)
+			//==> 4:  server에서 요청 처리가 client로 온 상태 (server에서 전송된 datark client에 도착완료상태)
+	 		
+			console.log("==>1.request.readyState :"+request.readyState);
+	
+	 		//request시  data전송 없음(Post방식일 경우 data전송함.. GET/POST 방식의 이해필요)
+			request.send(null);
+			console.log("==>2.request.readyState :"+request.readyState);
+			console.log("==>3.request.readyState :"+request.readyState);
+			console.log("==>4.request.readyState :"+request.readyState);
+	 	}
+	 	
+	 	//CallBackFunction Definition
+	 	function updatePage(){
+
+	 		//==> 1 : 요청이 초기화된 상태 (open()호출 send() 미호출)
+			//==> 2 : server에 요청이 시작된 상태 (send()호출 server에 data 미도착)
+			//==> 3:  server에서 요청 처리가 종료된 상태 (server의 요청처리 거의 종료, data일부 client에 도착)
+			//==> 4:  server에서 요청 처리가 client로 온 상태 (server에서 전송된 datark client에 도착완료상태)
+	 		console.log("====>updatePage() : "+request.readyState);
+		}
+	 	
+	</script>
+</head>
+
+<body>
+
+	<h1> 판매 보고서</h1>
+
+	<table>
+		<tr>
+			<th>판매된 상품 갯수</th>
+			<td><span id="sold">100</span></td>
+		</tr>
+		<tr>
+			<th>상품 단가</th>
+			<td><span id="price">100</span>원</td>
+		</tr>
+	</table>
+	
+	<h2>총 매출금액  : <span id="cash">100,00원</span></h2>
+	
+	<form  method="POST" action="calcServerNormal.jsp">
+		<input type="submit" value="판매보고서 다시보기(기존방식)">
+	</form>
+	
+	<form>
+		<input type="button" value="판매보고서 다시보기(ajax적용)"  onClick="javascript:getSold()">
+	</form>
+
+</body>
+
+</html>
