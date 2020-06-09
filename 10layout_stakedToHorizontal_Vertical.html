@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+	
+	<head>
+		<meta charset="EUC-KR">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<!--   jQuery , Bootstrap CDN  -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+		
+		<!--  CSS 추가 : 툴바에 화면 가리는 현상 해결 :  주석처리 전, 후 확인-->
+		<style>
+	        body {
+	            padding-top : 70px;
+	        }
+    	</style>
+		
+	</head>
+	
+<body>
+	
+	<div class="navbar  navbar-inverse navbar-fixed-top">
+		
+        <div class="container">
+        	<a class="navbar-brand" href="#">에브리타임</a>
+            
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#target">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+           	</div>
+            
+             <div class="collapse navbar-collapse" id="target">	
+            	<!-- Tool Bar 를 다양하게 사용하면.... -->
+                <ul class="nav navbar-nav">
+                	
+                	<!--  DropDown 사용 -->
+	                <li class="dropdown">
+                        <a  href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span>HOT게시판</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                             <li><a href="#">Web UI</a></li>
+                           	<li><a href="#">W3C</a></li>
+                            <li class="divider"></li>
+                             <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Static Contents</a></li>
+                        </ul>
+                    </li>
+                   
+                    <li><a href="#">정보게시판</a></li>
+                    <li><a href="#">홍보게시판</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">J2SE</a></li>
+                    <li><a href="#">API</a></li>
+               	</ul>
+               
+               	<form class="navbar-form navbar-right">
+                   	<input type="text" class="form-control" placeholder="Search" />
+               	</form>
+               	
+              </div> 	
+    		</div>
+    	</div>
+	
+		<!--  Bootstrap 은 Fixed : container  / Fluid Layout : container-fluid 을 제공 -->
+		<div class="container">
+			<!-- 다단레이아웃 : http://getbootstrap.com/css/ , Grid System ,  Example: Stacked-to-horizontal 참조 -->
+			<!-- 1개의 Row 를 12개의 Column 으로 나누어 배치 : col-md-1 ~ col-md-12 사용 -->
+			<div class="row">
+
+<!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->	        	
+				<div class="col-md-3">
+					<!--  목록에 제목을 기술 -->
+					<div class="panel panel-primary">
+	                    <div class="panel-heading">
+	                        <h3 class="panel-title">북한 대통령</h3>
+	                    </div>
+				
+				        <ul class="list-group">
+		                    <li class="list-group-item"><a href="#">김정은</a></li>
+		                    <li class="list-group-item"><a href="#">김일성</a></li>
+		                    <li class="list-group-item"><a href="#">시진핑</a></li>
+		                </ul>
+		            </div>
+	                
+	                <!--  목록에 제목을 기술 -->
+	                <div class="panel panel-default">
+	                    <div class="panel-heading">
+	                        <!--  아이콘을 기술 -->
+	                        <h3 class="panel-title">
+	                        	<i class="glyphicon glyphicon-heart"></i>
+	                        	<!--  http://getbootstrap.com/components/#glyphicons 확인요-->
+	                        	자유게시판
+	                        </h3>
+	                    </div>
+	                
+		                <ul class="list-group">
+		                    <li class="list-group-item"><a href="#">어린이게시판</a></li>
+	                    	<li class="list-group-item"><a href="#">성인게시판</a></li>
+		                </ul>
+		              
+		             </div>
+		             
+		             <!--  목록에 제목을 기술 -->
+	                <div class="panel panel-info">
+	                    <div class="panel-heading">
+	                        <!--  아이콘을 기술 -->
+	                        <h3 class="panel-title">
+	                        	<i class="glyphicon glyphicon-flag"></i>
+	                        	<!--  http://getbootstrap.com/components/#glyphicons 확인요-->
+	                        	캠퍼스픽
+	                        </h3>
+	                    </div>
+	                
+		                <ul class="list-group">
+		                    <li class="list-group-item"><a href="#">공부스터디</a></li>
+	                    <li class="list-group-item"><a href="#">여행스터디</a></li>
+	                    <li class="list-group-item"><a href="#">언어교환스터디</a></li>
+		                </ul>
+		             </div>
+   	 			</div>
+<!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->	        	
+    	 			
+   	 			<div class="col-md-9">
+			        <h1>요요 나는 김태욱 점심시간에 쥬시를 가지 </h1>
+			        <p>yoyo yosemiti republic man!!</p>
+		   	 		<p>하나님은 짜장면이 싫다고 하셨어</p>
+		   	 		<p>나는세상에서 과자가 제일좋아</p>
+		   	 		<p>나는 낭만고양이</p>
+		   	 	</div>
+   	 		</div>
+   	 	</div>
+
+	</body>
+</html>
