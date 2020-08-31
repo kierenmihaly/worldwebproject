@@ -1,0 +1,8 @@
+c:\users\se\documents\visual studio 2015\Projects\Socket_Test\Socket_Test\bin\Debug\Socket_Test.exe
+c:\users\se\documents\visual studio 2015\Projects\Socket_Test\Socket_Test\bin\Debug\Socket_Test.pdb
+c:\users\se\documents\visual studio 2015\Projects\Socket_Test\Socket_Test\obj\Debug\Socket_Test.csprojResolveAssemblyReference.cache
+c:\users\se\documents\visual studio 2015\Projects\Socket_Test\Socket_Test\obj\Debug\Socket_Test.Form1.resources
+c:\users\se\documents\visual studio 2015\Projects\Socket_Test\Socket_Test\obj\Debug\Socket_Test.Properties.Resources.resources
+c:\users\se\documents\visual studio 2015\Projects\Socket_Test\Socket_Test\obj\Debug\Socket_Test.csproj.GenerateResource.Cache
+c:\users\se\documents\visual studio 2015\Projects\Socket_Test\Socket_Test\obj\Debug\Socket_Test.exe
+c:\users\se\documents\visual studio 2015\Projects\Socket_Test\Socket_Test\obj\Debug\Socket_Test.pdb
